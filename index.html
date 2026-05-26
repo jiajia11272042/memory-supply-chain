@@ -3,376 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>存储芯片（内存）市场产业链图谱</title>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<title>产业链图谱合集</title>
 <style>
-  :root {
-    --blue: #1a478a;
-    --blue-light: #2c5f8a;
-    --accent: #e8f0fe;
-    --green-bg: #e6f4ea;
-    --yellow-bg: #fff8e1;
-    --red-bg: #fce8e6;
-  }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    color: #333; line-height: 1.7; padding: 40px 20px; background: #f8f9fa;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 40px 20px;
   }
-  .container { max-width: 1100px; margin: 0 auto; background: #fff; padding: 48px 56px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
-  h1 { font-size: 28px; color: var(--blue); text-align: center; margin-bottom: 8px; }
-  .subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 36px; }
-  h2 { font-size: 20px; color: var(--blue); border-left: 4px solid var(--blue); padding-left: 12px; margin: 36px 0 16px; }
-  h3 { font-size: 16px; color: var(--blue-light); margin: 24px 0 10px; }
-  p { margin: 8px 0; font-size: 14.5px; text-align: justify; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13.5px; }
-  th { background: var(--blue); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
-  td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; }
-  tr:hover td { background: var(--accent); }
-  .cn { font-weight: 700; color: #b71c1c; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 4px; }
-  .tag-up { background: var(--green-bg); color: #1b5e20; }
-  .tag-mid { background: var(--yellow-bg); color: #e65100; }
-  .tag-down { background: var(--red-bg); color: #b71c1c; }
-  .note { background: #f5f5f5; border-left: 3px solid #bbb; padding: 12px 16px; margin: 20px 0; font-size: 13px; color: #555; }
-  .mermaid-wrap { margin: 24px 0; overflow-x: auto; }
-  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
-  .summary-card { background: var(--accent); border-radius: 8px; padding: 16px; text-align: center; }
-  .summary-card .num { font-size: 28px; font-weight: 700; color: var(--blue); }
-  .summary-card .label { font-size: 13px; color: #555; margin-top: 4px; }
-  @media print {
-    body { padding: 0; background: #fff; }
-    .container { box-shadow: none; padding: 24px; }
-    tr:hover td { background: none; }
+  .wrap { max-width: 700px; width: 100%; }
+  h1 { color: #fff; font-size: 32px; text-align: center; margin-bottom: 8px; }
+  .sub { color: rgba(255,255,255,.75); text-align: center; font-size: 15px; margin-bottom: 40px; }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .card {
+    background: #fff; border-radius: 12px; padding: 32px; text-decoration: none; color: #333;
+    box-shadow: 0 8px 32px rgba(0,0,0,.15); transition: transform .2s, box-shadow .2s;
+    display: block;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+  .card h2 { font-size: 20px; color: #1a478a; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: #666; line-height: 1.6; }
+  .card .tags { margin-top: 12px; }
+  .card .tags span {
+    display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 12px;
+    font-weight: 600; margin-right: 6px; background: #e8f0fe; color: #1a478a;
   }
 </style>
 </head>
 <body>
-<div class="container">
-
-<h1>存储芯片（内存）市场产业链图谱</h1>
-<p class="subtitle">覆盖 DRAM · NAND Flash · NOR Flash · HBM · 新型存储 | 上游原材料/设备 → 中游设计/制造/封测 → 下游应用</p>
-
-<!-- ==================== 市场概览 ==================== -->
-<h2>市场概览</h2>
-<div class="summary-grid">
-  <div class="summary-card"><div class="num">~1,000亿$</div><div class="label">DRAM 市场规模</div></div>
-  <div class="summary-card"><div class="num">~700亿$</div><div class="label">NAND Flash</div></div>
-  <div class="summary-card"><div class="num">~300亿$</div><div class="label">HBM（+80-100% YoY）</div></div>
-  <div class="summary-card"><div class="num">~35亿$</div><div class="label">NOR Flash</div></div>
+<div class="wrap">
+  <h1>产业链图谱合集</h1>
+  <p class="sub">科技产业链深度梳理 · 上中下游全景分析</p>
+  <div class="cards">
+    <a class="card" href="存储芯片市场产业链图谱.html">
+      <h2>存储芯片（内存）市场产业链图谱</h2>
+      <p>DRAM · NAND Flash · NOR Flash · HBM · 新型存储，覆盖上游原材料/设备、中游设计/制造/封测、下游应用，含 30+ 家公司和 Mermaid 可视化关系图。</p>
+      <div class="tags">
+        <span>DRAM</span><span>NAND</span><span>HBM</span><span>国产替代</span><span>半导体设备</span>
+      </div>
+    </a>
+    <a class="card" href="ai-industry.html">
+      <h2>AI 行业现状与产业链全景分析</h2>
+      <p>全球主要 AI 大厂模型与产品对比（OpenAI / Google / Anthropic / DeepSeek 等）、AI 产业链上中下游全景、2025-2026 关键趋势分析。</p>
+      <div class="tags">
+        <span>大模型</span><span>AI Agent</span><span>算力</span><span>端侧AI</span><span>国产大模型</span>
+      </div>
+    </a>
+  </div>
 </div>
-
-<!-- ==================== 一、上游：关键原材料 ==================== -->
-<h2><span class="tag tag-up">上游</span> 关键原材料</h2>
-
-<h3>1. 硅片（Silicon Wafer）</h3>
-<p>硅片是存储芯片制造的基础衬底材料，主流规格为 300mm（12英寸），部分成熟制程使用 200mm（8英寸）。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>Shin-Etsu（信越化学）</td><td>日本</td><td>全球最大硅片供应商，市占率约30%</td></tr>
-  <tr><td>SUMCO</td><td>日本</td><td>全球第二大，与信越合计占全球约55%</td></tr>
-  <tr><td>Siltronic</td><td>德国</td><td>欧洲最大硅片厂商</td></tr>
-  <tr><td>SK Siltron</td><td>韩国</td><td>SK集团旗下，韩国本土供应</td></tr>
-  <tr><td class="cn">沪硅产业</td><td class="cn">中国</td><td class="cn">国内最大硅片企业，12英寸已量产</td></tr>
-  <tr><td class="cn">立昂微</td><td class="cn">中国</td><td class="cn">8英寸/12英寸硅片均有布局</td></tr>
-  <tr><td class="cn">TCL中环</td><td>中国</td><td>半导体硅片业务持续扩张</td></tr>
-</table>
-
-<h3>2. 光刻胶（Photoresist）</h3>
-<p>光刻胶是光刻工艺的核心材料，存储芯片制造对 ArF/KrF 光刻胶需求量大，先进制程需 EUV 光刻胶。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>JSR</td><td>日本</td><td>全球光刻胶龙头，ArF/EUV 光刻胶领先</td></tr>
-  <tr><td>TOK（东京应化）</td><td>日本</td><td>KrF/ArF 光刻胶主要供应商</td></tr>
-  <tr><td>信越化学</td><td>日本</td><td>电子级光刻胶</td></tr>
-  <tr><td class="cn">南大光电</td><td class="cn">中国</td><td class="cn">ArF 光刻胶已通过部分客户验证</td></tr>
-  <tr><td class="cn">彤程新材</td><td class="cn">中国</td><td class="cn">通过收购北京科华进入光刻胶领域</td></tr>
-  <tr><td class="cn">上海新阳</td><td class="cn">中国</td><td class="cn">光刻胶及配套材料</td></tr>
-</table>
-
-<h3>3. 电子特气（Electronic Specialty Gases）</h3>
-<p>半导体制造中使用的高纯度特种气体，包括含氟气体（NF₃、C₄F₈）、硅烷（SiH₄）、氮气等。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>SK Materials</td><td>韩国</td><td>韩国电子特气龙头</td></tr>
-  <tr><td>大阳日酸</td><td>日本</td><td>高纯度气体全球领先</td></tr>
-  <tr><td>默克（Merck）</td><td>德国</td><td>电子气体及前驱体</td></tr>
-  <tr><td class="cn">华特气体</td><td class="cn">中国</td><td class="cn">国内电子特气龙头，产品已导入多家晶圆厂</td></tr>
-  <tr><td class="cn">金宏气体</td><td class="cn">中国</td><td class="cn">电子大宗气体及特种气体</td></tr>
-  <tr><td class="cn">南大光电</td><td class="cn">中国</td><td class="cn">MO源及高纯电子特气</td></tr>
-</table>
-
-<h3>4. CMP 抛光液/垫（Chemical Mechanical Planarization）</h3>
-<p>CMP 工艺用于晶圆表面平坦化，3D NAND 多层堆叠对 CMP 需求大幅增加。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>Cabot Microelectronics</td><td>美国</td><td>全球 CMP 抛光液龙头</td></tr>
-  <tr><td>DuPont（陶氏）</td><td>美国</td><td>CMP 抛光垫全球领导者</td></tr>
-  <tr><td>Fujimi</td><td>日本</td><td>精密研磨材料</td></tr>
-  <tr><td class="cn">安集科技</td><td class="cn">中国</td><td class="cn">国内 CMP 抛光液龙头，已进入长江存储等供应链</td></tr>
-  <tr><td class="cn">鼎龙股份</td><td class="cn">中国</td><td class="cn">CMP 抛光垫国产替代</td></tr>
-</table>
-
-<h3>5. 湿电子化学品</h3>
-<p>包括超纯水、蚀刻液、清洗液等，用于晶圆清洗和蚀刻工艺。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>BASF</td><td>德国</td><td>全球湿电子化学品龙头</td></tr>
-  <tr><td>关东化学</td><td>日本</td><td>高纯度化学品</td></tr>
-  <tr><td class="cn">晶瑞电材</td><td class="cn">中国</td><td class="cn">超纯化学试剂</td></tr>
-  <tr><td class="cn">江化微</td><td class="cn">中国</td><td class="cn">湿电子化学品国产替代</td></tr>
-</table>
-
-<h3>6. 靶材（Sputtering Target）</h3>
-<p>用于物理气相沉积（PVD）工艺，形成金属互连层。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td>JX金属</td><td>日本</td><td>全球靶材龙头</td></tr>
-  <tr><td>Praxair / Linde</td><td>美/德</td><td>高纯金属靶材</td></tr>
-  <tr><td class="cn">江丰电子</td><td class="cn">中国</td><td class="cn">国内靶材龙头，已进入台积电等供应链</td></tr>
-  <tr><td class="cn">有研新材</td><td class="cn">中国</td><td class="cn">高纯稀土金属及靶材</td></tr>
-</table>
-
-<!-- ==================== 二、上游：关键设备 ==================== -->
-<h2><span class="tag tag-up">上游</span> 关键设备</h2>
-
-<h3>1. 光刻设备（Lithography）</h3>
-<p>光刻是芯片制造最核心的工序，ASML 在 EUV 光刻领域处于绝对垄断地位。</p>
-<table>
-  <tr><th>公司</th><th>国别</th><th>产品及地位</th></tr>
-  <tr><td><strong>ASML</strong></td><td>荷兰</td><td>EUV 光刻机全球唯一供应商，垄断高端市场</td></tr>
-  <tr><td>尼康（Nikon）</td><td>日本</td><td>DUV 光刻机，用于成熟制程</td></tr>
-  <tr><td>佳能（Canon）</td><td>日本</td><td>i-line 光刻机，用于低端/封装</td></tr>
-  <tr><td class="cn">上海微电子（SMEE）</td><td class="cn">中国</td><td class="cn">国产光刻机，目前可提供 90nm 级别</td></tr>
-</table>
-
-<h3>2. 刻蚀设备（Etch）</h3>
-<p>刻蚀用于选择性去除材料，3D NAND 的高深宽比刻蚀是技术难点。</p>
-<table>
-  <tr><th>公司</th><th>国别</th><th>备注</th></tr>
-  <tr><td><strong>Lam Research（泛林）</strong></td><td>美国</td><td>刻蚀设备全球第一，3D NAND 刻蚀领先</td></tr>
-  <tr><td>东京电子（TEL）</td><td>日本</td><td>刻蚀设备全球第二</td></tr>
-  <tr><td>应用材料（AMAT）</td><td>美国</td><td>刻蚀设备</td></tr>
-  <tr><td class="cn">中微公司</td><td class="cn">中国</td><td class="cn">国内刻蚀设备龙头，CCP 刻蚀已导入长江存储</td></tr>
-  <tr><td class="cn">北方华创</td><td class="cn">中国</td><td class="cn">ICP 刻蚀设备，产品线最全的国产设备商</td></tr>
-</table>
-
-<h3>3. 薄膜沉积设备（Deposition）</h3>
-<p>包括 CVD（化学气相沉积）、PVD（物理气相沉积）、ALD（原子层沉积）。</p>
-<table>
-  <tr><th>公司</th><th>国别</th><th>备注</th></tr>
-  <tr><td>应用材料（AMAT）</td><td>美国</td><td>CVD/PVD 全球领先</td></tr>
-  <tr><td>东京电子（TEL）</td><td>日本</td><td>CVD/ALD</td></tr>
-  <tr><td>Lam Research</td><td>美国</td><td>ALD 及沉积设备</td></tr>
-  <tr><td>ASM International</td><td>荷兰</td><td>ALD 设备全球领先</td></tr>
-  <tr><td class="cn">拓荆科技</td><td class="cn">中国</td><td class="cn">CVD/ALD 设备国产替代先锋</td></tr>
-  <tr><td class="cn">北方华创</td><td class="cn">中国</td><td class="cn">PVD/CVD 设备</td></tr>
-</table>
-
-<h3>4. 离子注入设备（Ion Implantation）</h3>
-<table>
-  <tr><th>公司</th><th>国别</th><th>备注</th></tr>
-  <tr><td>应用材料（AMAT）</td><td>美国</td><td>全球离子注入设备龙头</td></tr>
-  <tr><td>Axcelis</td><td>美国</td><td>高能离子注入</td></tr>
-  <tr><td class="cn">中科信</td><td class="cn">中国</td><td class="cn">国产离子注入设备</td></tr>
-</table>
-
-<h3>5. 量测/检测设备（Metrology &amp; Inspection）</h3>
-<table>
-  <tr><th>公司</th><th>国别</th><th>备注</th></tr>
-  <tr><td><strong>KLA</strong></td><td>美国</td><td>过程控制和检测全球领导者</td></tr>
-  <tr><td>应用材料（AMAT）</td><td>美国</td><td>检测设备</td></tr>
-  <tr><td>Lasertec</td><td>日本</td><td>EUV 掩膜版检测，全球唯一</td></tr>
-  <tr><td class="cn">精测电子</td><td class="cn">中国</td><td class="cn">膜厚/缺陷检测设备</td></tr>
-  <tr><td class="cn">上海睿励</td><td class="cn">中国</td><td class="cn">光学量测设备</td></tr>
-</table>
-
-<h3>6. CMP 设备</h3>
-<table>
-  <tr><th>公司</th><th>国别</th><th>备注</th></tr>
-  <tr><td>应用材料（AMAT）</td><td>美国</td><td>全球 CMP 设备龙头</td></tr>
-  <tr><td>Ebara</td><td>日本</td><td>CMP 设备</td></tr>
-  <tr><td class="cn">华海清科</td><td class="cn">中国</td><td class="cn">国产 CMP 设备唯一龙头，已进入长江存储</td></tr>
-</table>
-
-<!-- ==================== 三、中游：芯片设计与制造 ==================== -->
-<h2><span class="tag tag-mid">中游</span> 存储芯片设计与制造</h2>
-
-<h3>1. DRAM（动态随机存取存储器）</h3>
-<p>DRAM 是全球市场规模最大的存储芯片品类，主要用于手机、PC、服务器的主存。</p>
-<table>
-  <tr><th>公司</th><th>国别</th><th>市场份额</th><th>技术节点</th><th>备注</th></tr>
-  <tr><td><strong>三星电子</strong></td><td>韩国</td><td>~40%</td><td>1b nm (14nm级)</td><td>DRAM 全球霸主</td></tr>
-  <tr><td><strong>SK海力士</strong></td><td>韩国</td><td>~28%</td><td>1b nm</td><td>HBM 技术领先</td></tr>
-  <tr><td><strong>美光</strong></td><td>美国</td><td>~25%</td><td>1β nm</td><td>美国唯一 DRAM 厂商</td></tr>
-  <tr><td class="cn"><strong>长鑫存储（CXMT）</strong></td><td class="cn">中国</td><td class="cn">~5%</td><td class="cn">17nm/19nm</td><td class="cn">国内唯一 DRAM 量产企业</td></tr>
-  <tr><td>南亚科技</td><td>中国台湾</td><td>~2%</td><td>20nm级</td><td>利基型 DRAM</td></tr>
-</table>
-
-<h3>2. NAND Flash（闪存）</h3>
-<p>NAND Flash 用于数据存储，3D NAND 通过垂直堆叠提升容量，当前主流已达 200+ 层。</p>
-<table>
-  <tr><th>公司</th><th>国别</th><th>市场份额</th><th>技术</th><th>备注</th></tr>
-  <tr><td><strong>三星电子</strong></td><td>韩国</td><td>~35%</td><td>V9 (300+层)</td><td>NAND 技术领先</td></tr>
-  <tr><td><strong>SK海力士/铠侠（Kioxia）</strong></td><td>韩/日</td><td>~20%/15%</td><td>232层</td><td>原东芝存储</td></tr>
-  <tr><td><strong>美光</strong></td><td>美国</td><td>~15%</td><td>232层 QLC</td><td></td></tr>
-  <tr><td><strong>西部数据（WD）</strong></td><td>美国</td><td>~12%</td><td>218层</td><td>与铠侠合资</td></tr>
-  <tr><td>Solidigm</td><td>美国</td><td>~5%</td><td>192层</td><td>原英特尔 NAND 业务</td></tr>
-  <tr><td class="cn"><strong>长江存储（YMTC）</strong></td><td class="cn">中国</td><td class="cn">~5%</td><td class="cn">232层 Xtacking</td><td class="cn">国内 3D NAND 龙头</td></tr>
-</table>
-
-<h3>3. NOR Flash</h3>
-<p>NOR Flash 读取速度快、可执行代码，广泛用于 IoT、汽车电子、工业控制等领域。</p>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td class="cn"><strong>兆易创新（GigaDevice）</strong></td><td class="cn">中国</td><td class="cn">全球 NOR Flash 设计龙头之一，国内市占率最高</td></tr>
-  <tr><td><strong>华邦电子（Winbond）</strong></td><td>中国台湾</td><td>全球最大 NOR Flash 制造商</td></tr>
-  <tr><td><strong>旺宏（Macronix）</strong></td><td>中国台湾</td><td>高可靠性 NOR Flash</td></tr>
-  <tr><td>英飞凌（Infineon）</td><td>德国</td><td>原赛普拉斯 NOR 业务</td></tr>
-  <tr><td>ISSI</td><td>美国</td><td>利基型 NOR Flash</td></tr>
-</table>
-
-<h3>4. 新型存储技术</h3>
-<table>
-  <tr><th>技术</th><th>特点</th><th>主要公司</th><th>应用场景</th></tr>
-  <tr><td><strong>HBM</strong>（高带宽存储器）</td><td>3D 堆叠 DRAM，超高带宽</td><td>SK海力士、三星、美光</td><td>AI GPU（NVIDIA H100/B200）、HPC</td></tr>
-  <tr><td><strong>CXL</strong>（互联扩展）</td><td>基于 PCIe 的存储互联协议</td><td>三星、SK海力士、美光、Microchip</td><td>数据中心内存池化/扩展</td></tr>
-  <tr><td><strong>MRAM</strong>（磁阻存储器）</td><td>非易失、高速、高耐久</td><td>Everspin、Avalanche、三星、GF</td><td>嵌入式 MCU、IoT、汽车</td></tr>
-  <tr><td><strong>ReRAM</strong>（阻变存储器）</td><td>低功耗、高密度</td><td>Crossbar、富士通、Weebit Nano</td><td>嵌入式、存算一体</td></tr>
-  <tr><td><strong>PCM</strong>（相变存储器）</td><td>非易失、可多值存储</td><td>三星、Intel（Optane 已停产）</td><td>存储级内存（潜力方向）</td></tr>
-</table>
-
-<!-- ==================== 四、中游：封装测试 ==================== -->
-<h2><span class="tag tag-mid">中游</span> 封装测试</h2>
-
-<h3>传统封装测试</h3>
-<table>
-  <tr><th>公司</th><th>国别/地区</th><th>备注</th></tr>
-  <tr><td><strong>日月光（ASE）</strong></td><td>中国台湾</td><td>全球最大封测企业</td></tr>
-  <tr><td><strong>安靠（Amkor）</strong></td><td>美国/韩国</td><td>全球第二大封测企业</td></tr>
-  <tr><td class="cn"><strong>长电科技</strong></td><td class="cn">中国</td><td class="cn">国内封测龙头，全球第三</td></tr>
-  <tr><td class="cn"><strong>通富微电</strong></td><td class="cn">中国</td><td class="cn">与 AMD 深度合作</td></tr>
-  <tr><td class="cn"><strong>华天科技</strong></td><td class="cn">中国</td><td class="cn">存储芯片封测</td></tr>
-  <tr><td class="cn"><strong>晶方科技</strong></td><td class="cn">中国</td><td class="cn">传感器及存储封装</td></tr>
-</table>
-
-<h3>先进封装（HBM 相关）</h3>
-<p>HBM（高带宽存储器）采用 TSV（硅穿孔）+ CoWoS 等先进封装技术，是当前 AI 芯片的关键瓶颈。</p>
-<table>
-  <tr><th>公司</th><th>技术</th><th>备注</th></tr>
-  <tr><td><strong>TSMC（台积电）</strong></td><td>CoWoS、InFO</td><td>HBM 与 GPU 集成的核心封装平台</td></tr>
-  <tr><td><strong>SK海力士</strong></td><td>MR-MUF</td><td>HBM 先进封装自研技术</td></tr>
-  <tr><td><strong>三星电子</strong></td><td>I-Cube、X-Cube</td><td>HBM 先进封装方案</td></tr>
-  <tr><td><strong>Intel</strong></td><td>EMIB、Foveros</td><td>2.5D/3D 封装技术</td></tr>
-  <tr><td><strong>日月光</strong></td><td>FoWLP</td><td>先进封装代工</td></tr>
-</table>
-
-<!-- ==================== 五、下游：应用领域 ==================== -->
-<h2><span class="tag tag-down">下游</span> 主要应用领域</h2>
-<table>
-  <tr><th>应用领域</th><th>存储需求</th><th>主要客户/终端</th><th>增长驱动</th></tr>
-  <tr><td><strong>AI/HPC</strong></td><td>HBM、大容量 DRAM、高速 SSD</td><td>NVIDIA、AMD、Google TPU</td><td>大模型训练/推理需求爆发</td></tr>
-  <tr><td><strong>服务器/数据中心</strong></td><td>DDR5 RDIMM、企业级 SSD</td><td>AWS、Azure、阿里云、腾讯云</td><td>云计算持续扩张</td></tr>
-  <tr><td><strong>智能手机</strong></td><td>LPDDR5/5X、UFS 4.0</td><td>苹果、三星、小米、华为</td><td>AI 手机带动存储升级</td></tr>
-  <tr><td><strong>PC/笔记本</strong></td><td>DDR5、NVMe SSD</td><td>联想、惠普、戴尔、苹果</td><td>AI PC 换机潮</td></tr>
-  <tr><td><strong>汽车电子</strong></td><td>车规级 DRAM/NAND/NOR</td><td>特斯拉、比亚迪、蔚来</td><td>智能驾驶 + 智能座舱</td></tr>
-  <tr><td><strong>IoT/可穿戴</strong></td><td>低功耗 NOR Flash、小容量 DRAM</td><td>各类智能设备</td><td>万物互联</td></tr>
-  <tr><td><strong>工业控制</strong></td><td>高可靠性 NOR Flash、MRAM</td><td>工业自动化</td><td>工业 4.0 升级</td></tr>
-</table>
-
-<!-- ==================== 六、竞争格局 ==================== -->
-<h2>竞争格局</h2>
-<table>
-  <tr><th>品类</th><th>竞争格局</th><th>国产关键企业</th></tr>
-  <tr><td>DRAM</td><td>三星 / SK海力士 / 美光三强垄断（CR3 &gt; 90%）</td><td class="cn">长鑫存储（国内唯一量产）</td></tr>
-  <tr><td>NAND Flash</td><td>三星 / 铠侠 / 美光 / WD 四强主导（CR4 &gt; 85%）</td><td class="cn">长江存储（国内唯一 3D NAND 量产）</td></tr>
-  <tr><td>NOR Flash</td><td>市场相对分散，国产替代程度较高</td><td class="cn">兆易创新（国内市占率最高）</td></tr>
-  <tr><td>HBM</td><td>SK海力士领先（~50%+），三星/美光追赶</td><td class="cn">暂无量产企业，封测端长电/通富有布局</td></tr>
-  <tr><td>设备</td><td>ASML/Lam/AMAT/TEL/KLA 五大寡头</td><td class="cn">北方华创、中微公司、拓荆科技、华海清科</td></tr>
-  <tr><td>材料</td><td>日美企业主导各细分赛道</td><td class="cn">沪硅产业、安集科技、华特气体、江丰电子</td></tr>
-</table>
-
-<!-- ==================== 七、产业链关系图 ==================== -->
-<h2>产业链关系图</h2>
-<div class="mermaid">
-graph TB
-    subgraph UP1["&nbsp;&nbsp;上游 — 原材料&nbsp;&nbsp;"]
-        W["硅片<br/>信越化学 · SUMCO<br/>沪硅产业 · 立昂微"]
-        PR["光刻胶<br/>JSR · TOK<br/>南大光电 · 彤程新材"]
-        GAS["电子特气<br/>SK Materials · 大阳日酸<br/>华特气体 · 金宏气体"]
-        CMPM["CMP 抛光液/垫<br/>Cabot · DuPont<br/>安集科技 · 鼎龙股份"]
-        WET["湿电子化学品<br/>BASF · 关东化学<br/>晶瑞电材 · 江化微"]
-        TGT["靶材<br/>JX金属 · Linde<br/>江丰电子 · 有研新材"]
-    end
-
-    subgraph UP2["&nbsp;&nbsp;上游 — 设备&nbsp;&nbsp;"]
-        LITHO["光刻机<br/>ASML · 尼康 · 佳能<br/>上海微电子"]
-        ETCH["刻蚀机<br/>Lam · TEL · AMAT<br/>中微公司 · 北方华创"]
-        DEP["薄膜沉积<br/>AMAT · TEL · ASM<br/>拓荆科技 · 北方华创"]
-        IMP["离子注入<br/>AMAT · Axcelis<br/>中科信"]
-        METRO["检测量测<br/>KLA · Lasertec<br/>精测电子 · 上海睿励"]
-        CMPEQ["CMP设备<br/>AMAT · Ebara<br/>华海清科"]
-    end
-
-    subgraph MID1["&nbsp;&nbsp;中游 — 芯片&nbsp;&nbsp;"]
-        DRAM["DRAM<br/>三星 · SK海力士 · 美光<br/>长鑫存储 · 南亚科"]
-        NAND["NAND Flash<br/>三星 · 铠侠 · 美光 · WD<br/>长江存储 · Solidigm"]
-        NOR["NOR Flash<br/>兆易创新 · 华邦 · 旺宏<br/>英飞凌 · ISSI"]
-        HBM["HBM<br/>SK海力士 · 三星 · 美光"]
-        NEW["新型存储<br/>MRAM: Everspin · Avalanche<br/>ReRAM: Crossbar · 富士通"]
-    end
-
-    subgraph MID2["&nbsp;&nbsp;中游 — 封测&nbsp;&nbsp;"]
-        OSAT["传统封测<br/>日月光 · 安靠<br/>长电科技 · 通富微电 · 华天科技"]
-        ADV["先进封装<br/>TSMC CoWoS<br/>三星 I-Cube · Intel Foveros"]
-    end
-
-    subgraph DOWN["&nbsp;&nbsp;下游 — 应用&nbsp;&nbsp;"]
-        AI["AI / HPC<br/>NVIDIA · AMD · Google"]
-        SERVER["服务器 / 数据中心<br/>AWS · Azure · 阿里云"]
-        PHONE["智能手机<br/>苹果 · 三星 · 小米 · 华为"]
-        PCA["PC / 笔记本<br/>联想 · 惠普 · 戴尔"]
-        AUTO["汽车电子<br/>特斯拉 · 比亚迪 · 蔚来"]
-        IOT["IoT / 可穿戴"]
-    end
-
-    W & PR & GAS & CMPM & WET & TGT --> FAB["晶圆制造"]
-    LITHO & ETCH & DEP & IMP & METRO & CMPEQ --> FAB
-    FAB --> DRAM & NAND & NOR & HBM & NEW
-    DRAM & NAND & NOR & HBM & NEW --> OSAT & ADV
-    OSAT & ADV --> AI & SERVER & PHONE & PCA & AUTO & IOT
-
-    style FAB fill:#e8eaf6,stroke:#3949ab,stroke-width:2px
-    style HBM fill:#fff9c4,stroke:#f9a825,stroke-width:2px
-    style AI fill:#e0f7fa,stroke:#00838f,stroke-width:2px
-    style UP1 fill:#e8f5e9,stroke:#2e7d32
-    style UP2 fill:#e8f5e9,stroke:#2e7d32
-    style MID1 fill:#fff3e0,stroke:#e65100
-    style MID2 fill:#fff3e0,stroke:#e65100
-    style DOWN fill:#fce4ec,stroke:#c62828
-</div>
-
-<div class="note">
-  <strong>说明：</strong>本文数据综合自行业公开信息及券商研报，市场份额为约数，仅供研究参考。具体数据建议参考 TrendForce、Yole Group、IC Insights 等专业机构最新报告。<br>
-  <strong>标注说明：</strong><span class="cn">红色加粗</span> 为国产企业。
-</div>
-
-</div><!-- .container -->
-
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      fontSize: '13px',
-      fontFamily: '-apple-system, PingFang SC, Microsoft YaHei, sans-serif'
-    },
-    flowchart: {
-      useMaxWidth: true,
-      htmlLabels: true,
-      curve: 'basis'
-    }
-  });
-</script>
 </body>
 </html>
