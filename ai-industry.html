@@ -3,548 +3,812 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI 行业现状与产业链全景分析</title>
+<title>AI 产业链深度分析 — 技术突破·难点·趋势·公司</title>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <style>
-  :root {
-    --blue: #1a478a;
-    --blue-light: #2c5f8a;
-    --accent: #e8f0fe;
-    --green: #1b5e20;
-    --green-bg: #e6f4ea;
-    --orange: #e65100;
-    --orange-bg: #fff3e0;
-    --red: #b71c1c;
-    --red-bg: #fce8e6;
-    --purple: #4a148c;
-    --purple-bg: #f3e5f5;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-    color: #333; line-height: 1.7; padding: 40px 20px; background: #f8f9fa;
-  }
-  .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 48px 56px; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
-  h1 { font-size: 28px; color: var(--blue); text-align: center; margin-bottom: 8px; }
-  .subtitle { text-align: center; color: #666; font-size: 14px; margin-bottom: 36px; }
-  h2 { font-size: 20px; color: var(--blue); border-left: 4px solid var(--blue); padding-left: 12px; margin: 40px 0 16px; }
-  h3 { font-size: 16px; color: var(--blue-light); margin: 24px 0 10px; }
-  p { margin: 8px 0; font-size: 14.5px; text-align: justify; }
-  table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 13.5px; }
-  th { background: var(--blue); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
-  td { padding: 8px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
-  tr:hover td { background: var(--accent); }
-  .cn { font-weight: 700; color: var(--red); }
-  .highlight { background: #fffde7; }
-  .tag { display: inline-block; padding: 2px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 6px; }
-  .tag-up { background: var(--green-bg); color: var(--green); }
-  .tag-mid { background: var(--orange-bg); color: var(--orange); }
-  .tag-down { background: var(--red-bg); color: var(--red); }
-  .tag-new { background: var(--purple-bg); color: var(--purple); }
-  .note { background: #f5f5f5; border-left: 3px solid #bbb; padding: 12px 16px; margin: 20px 0; font-size: 13px; color: #555; }
-  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
-  .summary-card { background: var(--accent); border-radius: 8px; padding: 18px; text-align: center; }
-  .summary-card .num { font-size: 26px; font-weight: 700; color: var(--blue); }
-  .summary-card .label { font-size: 13px; color: #555; margin-top: 4px; }
-  .company-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin: 16px 0; }
-  .company-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px; transition: box-shadow .2s; }
-  .company-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
-  .company-card h4 { font-size: 15px; color: var(--blue); margin-bottom: 8px; }
-  .company-card .models { font-size: 13px; color: #444; }
-  .company-card .models strong { color: var(--red); }
-  .badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; margin-left: 4px; }
-  .badge-open { background: #c8e6c9; color: #2e7d32; }
-  .badge-closed { background: #ffcdd2; color: #c62828; }
-  .badge-cn { background: #ffe0b2; color: #e65100; }
-  .mermaid-wrap { margin: 24px 0; overflow-x: auto; }
-  @media print {
-    body { padding: 0; background: #fff; }
-    .container { box-shadow: none; padding: 24px; }
-    tr:hover td { background: none; }
-  }
+  :root{--blue:#1a478a;--blue-l:#2c5f8a;--accent:#e8f0fe;--green:#1b5e20;--green-bg:#e6f4ea;--orange:#e65100;--orange-bg:#fff3e0;--red:#b71c1c;--red-bg:#fce8e6;--purple:#4a148c;--purple-bg:#f3e5f5;--gray:#546e7a;--gray-bg:#eceff1}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#333;line-height:1.75;padding:40px 20px;background:#f5f6f8}
+  .container{max-width:1260px;margin:0 auto;background:#fff;padding:48px 56px;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+  h1{font-size:26px;color:var(--blue);text-align:center;margin-bottom:6px}
+  .subtitle{text-align:center;color:#666;font-size:14px;margin-bottom:32px}
+  h2{font-size:19px;color:var(--blue);border-left:4px solid var(--blue);padding-left:12px;margin:40px 0 14px}
+  h3{font-size:15px;color:var(--blue-l);margin:22px 0 8px;padding-left:4px}
+  h4{font-size:14px;color:#37474f;margin:14px 0 6px}
+  p{margin:6px 0;font-size:14px;text-align:justify}
+  ul{margin:6px 0 12px 20px;font-size:13.5px}
+  li{margin:3px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0 18px;font-size:13px}
+  th{background:var(--blue);color:#fff;padding:8px 10px;text-align:left;font-weight:600;font-size:12.5px}
+  td{padding:7px 10px;border-bottom:1px solid #e0e0e0;vertical-align:top}
+  tr:hover td{background:var(--accent)}
+  .cn{font-weight:700;color:var(--red)}
+  .hl{background:#fffde7}
+  .tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:11.5px;font-weight:600;margin-right:5px}
+  .tag-up{background:var(--green-bg);color:var(--green)}
+  .tag-mid{background:var(--orange-bg);color:var(--orange)}
+  .tag-down{background:var(--red-bg);color:var(--red)}
+  .note{background:#f5f5f5;border-left:3px solid #bbb;padding:10px 14px;margin:16px 0;font-size:13px;color:#555}
+  .breakdown{background:#fafafa;border:1px solid #e8e8e8;border-radius:6px;padding:14px 18px;margin:10px 0}
+  .breakdown h4{margin-top:0;color:var(--blue)}
+  .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
+  .summary-card{background:var(--accent);border-radius:8px;padding:16px;text-align:center}
+  .summary-card .num{font-size:24px;font-weight:700;color:var(--blue)}
+  .summary-card .label{font-size:12px;color:#555;margin-top:3px}
+  .company-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin:12px 0}
+  .company-card{border:1px solid #e0e0e0;border-radius:8px;padding:16px;transition:box-shadow .2s}
+  .company-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  .company-card h4{font-size:14px;color:var(--blue);margin-bottom:6px}
+  .company-card .models{font-size:13px;color:#444}
+  .badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:10.5px;font-weight:600;margin-left:3px}
+  .badge-open{background:#c8e6c9;color:#2e7d32}
+  .badge-closed{background:#ffcdd2;color:#c62828}
+  .badge-cn{background:#ffe0b2;color:#e65100}
+  @media print{body{padding:0;background:#fff}.container{box-shadow:none;padding:24px}tr:hover td{background:none}}
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>AI 行业现状与产业链全景分析</h1>
-<p class="subtitle">从算力芯片到大模型到终端应用 — 2025-2026 AI 产业格局深度梳理</p>
+<h1>AI 产业链深度分析</h1>
+<p class="subtitle">技术突破 · 核心难点 · 发展趋势 · 公司映射 — 从晶体管到应用的全链路拆解</p>
 
-<!-- ==================== 行业概览 ==================== -->
-<h2>行业概览：AI 正在经历什么</h2>
-<p>2023 年 ChatGPT 点燃了生成式 AI 的爆发，2024 年是"百模大战"的元年，而 2025-2026 年 AI 行业正在经历三个关键转变：</p>
-<p><strong>第一，从"训练为王"到"推理为王"。</strong>过去行业竞争焦点是"谁的模型更大、训练成本更高"，现在转向"谁的推理更便宜、更快、更准"。DeepSeek-R1 用极低的训练成本逼近 OpenAI o1 的性能，证明了这一点。推理成本的急剧下降正在让 AI 从"奢侈品"变成"日用品"。</p>
-<p><strong>第二，从"聊天机器人"到"AI Agent"。</strong>大模型不再只是问答工具，而是能自主规划、调用工具、执行多步任务的智能体。OpenAI 的 Operator、Anthropic 的 Claude Agent、字节的 Coze 都在押注这个方向。Agent 被认为是 2025-2026 年 AI 应用的核心主线。</p>
-<p><strong>第三，从"云端大模型"到"端侧 AI"。</strong>苹果 Apple Intelligence、高通/联发科的端侧 NPU、Meta 的 AI 眼镜，都在把 AI 能力塞进手机、PC、可穿戴设备。端侧 AI 不依赖网络、保护隐私、响应更快，是下一个增长极。</p>
-
+<!-- ==================== 概览 ==================== -->
+<h2>行业全景：AI 产业链三层结构</h2>
 <div class="summary-grid">
-  <div class="summary-card"><div class="num">~5,000亿$</div><div class="label">全球 AI 市场规模（2025E）</div></div>
-  <div class="summary-card"><div class="num">~1,500亿$</div><div class="label">全球 AI 芯片市场（2025E）</div></div>
-  <div class="summary-card"><div class="num">~6,000亿元</div><div class="label">中国 AI 核心产业规模（2025E）</div></div>
-  <div class="summary-card"><div class="num">100+</div><div class="label">全球大模型数量（参数 >100B）</div></div>
+  <div class="summary-card"><div class="num">~1,500亿$</div><div class="label">AI 芯片市场（2025E）</div></div>
+  <div class="summary-card"><div class="num">~300亿$</div><div class="label">HBM 市场（2025E）</div></div>
+  <div class="summary-card"><div class="num">~5,000亿$</div><div class="label">全球 AI 市场（2025E）</div></div>
+  <div class="summary-card"><div class="num">>3,000亿$</div><div class="label">科技巨头 AI CapEx（2025E）</div></div>
 </div>
 
-<!-- ==================== 一、各大厂模型与产品 ==================== -->
-<h2>一、全球主要 AI 大厂：模型与产品</h2>
+<!-- ================================================================ -->
+<!--                        上游：算力基础设施                          -->
+<!-- ================================================================ -->
 
-<h3>1. 海外头部厂商</h3>
+<h2><span class="tag tag-up">上游</span> 算力基础设施层</h2>
+<p>AI 的起点是算力。一张 GPU 的晶体管数量、内存带宽、互联速率，直接决定了大模型能训多大、推理多快。整个上游基础设施围绕一个核心命题：<strong>如何在单位时间内、以最低成本，把最多的算力喂给模型</strong>。</p>
 
-<div class="company-grid">
+<!-- ===== 2.1 AI 芯片 ===== -->
+<h3>2.1 AI 芯片（GPU / ASIC / NPU）</h3>
 
-<div class="company-card">
-  <h4>OpenAI <span class="badge badge-closed">闭源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>GPT-4o（多模态旗舰）、GPT-4.5（预览）、o1 / o3 / o4-mini（推理系列）<br>
-    <strong>产品矩阵：</strong>ChatGPT（全球用户 3 亿+）、API 平台、Sora（视频生成）、Operator（Agent）、Codex（编程）<br>
-    <strong>定位：</strong>行业领跑者，通用能力最强，商业化最成熟<br>
-    <strong>关键动态：</strong>2025 年推出 o3/o4-mini 推理模型，Agent 方向发力；正从非营利转型为营利性公司
-  </div>
-</div>
+<p>AI 芯片是整个产业链的"发动机"。当前格局：NVIDIA 一家独大（训练市场 90%+），但云厂商自研 ASIC 和国产替代正在加速。</p>
 
-<div class="company-card">
-  <h4>Google DeepMind <span class="badge badge-closed">闭源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Gemini 2.5 Pro（旗舰）、Gemini 2.5 Flash（轻量高速）、Gemini Ultra（最强推理）<br>
-    <strong>产品矩阵：</strong>Google AI Studio、Vertex AI 云平台、Search AI Overview、Gemini App、NotebookLM<br>
-    <strong>定位：</strong>搜索+云+AI 三位一体，多模态能力领先（原生支持文本/图像/音频/视频/代码）<br>
-    <strong>关键动态：</strong>Gemini 2.5 Pro 在多项基准测试中登顶；NotebookLM 的 Audio Overview 功能爆火
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>Anthropic <span class="badge badge-closed">闭源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Claude Opus 4（最强）、Claude Sonnet 4（均衡）、Claude Haiku 4（轻量）<br>
-    <strong>产品矩阵：</strong>Claude.ai 对话平台、API、Claude Code（CLI 编程工具）、Claude Agent SDK<br>
-    <strong>定位：</strong>安全对齐路线，编程/分析能力顶尖，企业级市场增长快<br>
-    <strong>关键动态：</strong>Claude 4 系列发布，编码能力行业领先；推出 Agent SDK 支持开发者构建自定义 Agent
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>Meta <span class="badge badge-open">开源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Llama 4（Scout / Maverick / Behemoth 三档）<br>
-    <strong>产品矩阵：</strong>Meta AI 助手（集成在 WhatsApp/Instagram/Facebook）、开源社区生态<br>
-    <strong>定位：</strong>开源路线旗手，通过开源生态建立护城河<br>
-    <strong>关键动态：</strong>Llama 4 系列发布，Scout（17B 活跃参数 / 109B 总参数）效率极高；Meta AI 月活超 5 亿
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>xAI（Elon Musk）<span class="badge badge-closed">闭源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Grok-3 / Grok-3 mini<br>
-    <strong>产品矩阵：</strong>Grok 对话助手（集成在 X/Twitter 平台）<br>
-    <strong>定位：</strong>依托 X 平台数据和 Colossus 超算集群（10 万张 H100），算力优势明显<br>
-    <strong>关键动态：</strong>Colossus 2 超算集群扩展至 20 万张 GPU，Grok-3 推理能力大幅跃升
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>Mistral <span class="badge badge-open">开源+闭源</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Mistral Large 2、Mistral Medium、Mixtral（MoE 架构）、Pixtral（多模态）<br>
-    <strong>产品矩阵：</strong>Le Chat 对话助手、La Plateforme API 平台<br>
-    <strong>定位：</strong>欧洲 AI 代表，开源与商业并行，MoE 架构先驱<br>
-    <strong>关键动态：</strong>获得微软投资，估值超 60 亿欧元；与法国政府深度合作
-  </div>
-</div>
-
-</div>
-
-<h3>2. 国内主要厂商</h3>
-
-<div class="company-grid">
-
-<div class="company-card">
-  <h4>DeepSeek（深度求索）<span class="badge badge-open">开源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>DeepSeek-V3（通用旗舰）、DeepSeek-R1（推理模型，逼近 o1）<br>
-    <strong>产品矩阵：</strong>DeepSeek Chat、开放 API 平台<br>
-    <strong>定位：</strong>训练成本极低（V3 训练成本仅 557 万美元），开源路线，引爆全球关注<br>
-    <strong>关键动态：</strong>R1 发布后引发美股科技股震动；MoE 架构 + 强化学习推理的标杆
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>阿里云（通义千问 Qwen）<span class="badge badge-open">开源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Qwen2.5 系列（0.5B ~ 72B 多档）、Qwen-VL（视觉）、Qwen-Coder（代码）、Qwen-Audio<br>
-    <strong>产品矩阵：</strong>通义千问 App、阿里云百炼平台、通义灵码（AI 编程）<br>
-    <strong>定位：</strong>开源生态最活跃的国内厂商，HuggingFace 下载量全球前列<br>
-    <strong>关键动态：</strong>Qwen2.5 在多项开源基准中领先；阿里云百炼平台接入多家模型
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>字节跳动（豆包）<span class="badge badge-closed">闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>豆包大模型（Doubao）、Seed 系列<br>
-    <strong>产品矩阵：</strong>豆包 App（月活超 1 亿）、Coze（Agent 平台）、火山引擎 API、扣子<br>
-    <strong>定位：</strong>用户规模最大的国内 AI 产品，深度集成抖音/飞书/剪映生态<br>
-    <strong>关键动态：</strong>豆包成为国内月活最高的 AI 应用；Coze Agent 平台生态快速增长；API 价格战先锋
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>百度（文心一言）<span class="badge badge-closed">闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>文心大模型 4.5 / 4.5 Turbo<br>
-    <strong>产品矩阵：</strong>文心一言 App、百度智能云千帆平台、文心快码（AI 编程）<br>
-    <strong>定位：</strong>国内最早推出大模型的厂商，深度整合搜索/地图/网盘生态<br>
-    <strong>关键动态：</strong>文心 4.5 多模态能力提升；千帆平台企业客户超 10 万
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>智谱 AI（GLM）<span class="badge badge-open">开源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>GLM-4 系列、CogView（图像生成）、CogVideo（视频生成）、CodeGeeX（代码）<br>
-    <strong>产品矩阵：</strong>智谱清言 App、开放平台 API、AutoGLM（Agent）<br>
-    <strong>定位：</strong>清华系团队，学术根基深厚，多模态和 Agent 能力突出<br>
-    <strong>关键动态：</strong>AutoGLM 手机 Agent 引发关注；获多轮大额融资
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>月之暗面（Kimi）<span class="badge badge-closed">闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Kimi k1.5（长思考推理模型）<br>
-    <strong>产品矩阵：</strong>Kimi Chat（200 万字超长上下文窗口）<br>
-    <strong>定位：</strong>超长上下文能力行业领先，C 端用户增长迅猛<br>
-    <strong>关键动态：</strong>Kimi 月活一度超千万；k1.5 推理模型与 o1 对标
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>腾讯（混元大模型）<span class="badge badge-open">开源+闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>混元大模型（Hunyuan，MoE 架构，万亿参数）、Hunyuan-T1（推理模型）、HunyuanVideo（视频生成）<br>
-    <strong>产品矩阵：</strong>腾讯元宝 App、腾讯云混元 API、微信 AI 助手（内测）、腾讯文档 AI、腾讯广告 AI<br>
-    <strong>定位：</strong>依托微信/QQ/腾讯云 10 亿级用户生态，AI 落地场景最丰富<br>
-    <strong>关键动态：</strong>混元大模型开源（MoE 万亿参数）；元宝 App 整合搜索+对话+创作；腾讯文档/会议/广告全面接入 AI；HunyuanVideo 视频生成能力行业领先
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>小米（MiMo）<span class="badge badge-open">开源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>MiMo（基于自研基座，端云协同）、MiMo-7B（开源小模型，推理能力突出）<br>
-    <strong>产品矩阵：</strong>小爱同学 AI 升级版、小米澎湃 OS AI 能力、小米汽车智能座舱 AI、AI 眼镜<br>
-    <strong>定位：</strong>端侧 AI 先锋，手机+汽车+IoT 全场景 AI 落地<br>
-    <strong>关键动态：</strong>MiMo-7B 开源模型在推理基准上表现亮眼（超越同体量模型）；小爱同学接入大模型能力全面升级；小米汽车 SU7 智能座舱深度集成 AI；小米 AI 眼镜发布，端侧 AI 硬件探索
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>MiniMax <span class="badge badge-closed">闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>abab 系列（万亿参数 MoE）、Music（音乐生成）、T2A（语音合成）<br>
-    <strong>产品矩阵：</strong>海螺 AI（国内）、Talkie（海外，社交 AI，全球用户超千万）、海螺音乐<br>
-    <strong>定位：</strong>多模态能力突出（语音/音乐/视频），海外社交 AI 赛道领先者<br>
-    <strong>关键动态：</strong>Talkie 在海外市场表现亮眼，日韩/东南亚用户增长迅猛；海螺音乐 AI 生成质量行业领先
-  </div>
-</div>
-
-<div class="company-card">
-  <h4>阶跃星辰（Step）<span class="badge badge-open">开源+闭源</span> <span class="badge badge-cn">中国</span></h4>
-  <div class="models">
-    <strong>核心模型：</strong>Step-2（万亿参数 MoE）、Step-1.5V（多模态）<br>
-    <strong>产品矩阵：</strong>跃问 App（对话+多模态）、开放平台 API<br>
-    <strong>定位：</strong>原微软亚洲研究院团队，多模态和视频理解能力突出<br>
-    <strong>关键动态：</strong>Step-2 在多项评测中表现优异；跃问 App 视频理解能力行业领先
-  </div>
-</div>
-
-</div>
-
-<h3>3. 模型能力矩阵速览</h3>
+<h4>核心技术架构</h4>
 <table>
+  <tr><th>架构要素</th><th>技术说明</th><th>当前水平</th><th>难点</th></tr>
   <tr>
-    <th>厂商</th><th>模型</th><th>开源/闭源</th><th>通用能力</th><th>推理能力</th><th>多模态</th><th>编程</th><th>上下文长度</th>
-  </tr>
-  <tr><td>OpenAI</td><td>GPT-4o / o3</td><td>闭源</td><td>★★★★★</td><td>★★★★★</td><td>★★★★★</td><td>★★★★☆</td><td>128K</td></tr>
-  <tr><td>Google</td><td>Gemini 2.5 Pro</td><td>闭源</td><td>★★★★★</td><td>★★★★★</td><td>★★★★★</td><td>★★★★☆</td><td>1M</td></tr>
-  <tr><td>Anthropic</td><td>Claude Opus 4</td><td>闭源</td><td>★★★★★</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★★★</td><td>200K</td></tr>
-  <tr><td>Meta</td><td>Llama 4 Scout</td><td>开源</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>10M</td></tr>
-  <tr class="highlight"><td class="cn">DeepSeek</td><td>R1 / V3</td><td>开源</td><td>★★★★☆</td><td>★★★★★</td><td>★★★☆☆</td><td>★★★★☆</td><td>128K</td></tr>
-  <tr><td class="cn">阿里</td><td>Qwen2.5</td><td>开源</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★★☆</td><td>128K</td></tr>
-  <tr><td class="cn">字节</td><td>豆包</td><td>闭源</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>128K</td></tr>
-  <tr><td class="cn">百度</td><td>文心 4.5</td><td>闭源</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>128K</td></tr>
-  <tr><td class="cn">智谱</td><td>GLM-4</td><td>开源</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>128K</td></tr>
-  <tr><td class="cn">月之暗面</td><td>Kimi k1.5</td><td>闭源</td><td>★★★★☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★☆☆</td><td>200万字</td></tr>
-  <tr><td class="cn">腾讯</td><td>混元 / T1</td><td>开源+闭源</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>256K</td></tr>
-  <tr><td class="cn">小米</td><td>MiMo-7B</td><td>开源</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★☆☆</td><td>128K</td></tr>
-  <tr><td class="cn">MiniMax</td><td>abab</td><td>闭源</td><td>★★★☆☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★☆☆☆</td><td>128K</td></tr>
-  <tr><td class="cn">阶跃星辰</td><td>Step-2</td><td>开源+闭源</td><td>★★★★☆</td><td>★★★☆☆</td><td>★★★★☆</td><td>★★★☆☆</td><td>128K</td></tr>
-</table>
-
-<!-- ==================== 二、AI 产业链全景 ==================== -->
-<h2>二、AI 产业链全景</h2>
-
-<h3><span class="tag tag-up">上游</span> 算力基础设施层</h3>
-<p>AI 产业链的起点是算力。没有足够的 GPU/TPU 和数据中心，大模型训练和推理都是空谈。当前算力供给严重不足，尤其是高端 AI 芯片。</p>
-
-<table>
-  <tr><th>细分领域</th><th>关键环节</th><th>代表企业</th><th>备注</th></tr>
-  <tr>
-    <td rowspan="4"><strong>AI 芯片</strong></td>
-    <td>GPU（训练+推理）</td>
-    <td><strong>NVIDIA</strong>（H100/H200/B200/GB200）、AMD（MI300X/MI400）</td>
-    <td>NVIDIA 占 AI 训练市场 90%+ 份额</td>
+    <td><strong>计算核心</strong></td>
+    <td>GPU 中的 CUDA Core（通用计算）+ Tensor Core（矩阵加速，专门加速 GEMM 运算）</td>
+    <td>NVIDIA B200：18,432 CUDA Core + 第 5 代 Tensor Core，FP8 算力 9 PFLOPS</td>
+    <td>FP8/FP4 低精度训练的精度损失控制；稀疏计算的有效利用率</td>
   </tr>
   <tr>
-    <td>AI ASIC</td>
-    <td>Google（TPU v5p/v6）、Amazon（Trainium2）、Microsoft（Maia）</td>
-    <td>云厂商自研芯片，减少对 NVIDIA 依赖</td>
+    <td><strong>制程工艺</strong></td>
+    <td>晶体管栅极宽度，越小越省电越密集</td>
+    <td>NVIDIA B200: TSMC 4NP；下一代 Rubin: 3nm；2027 年预计 2nm</td>
+    <td>3nm 以下 EUV 多重曝光成本飙升；2nm GAA 架构良率爬坡</td>
   </tr>
   <tr>
-    <td class="cn">国产 AI 芯片</td>
-    <td class="cn">华为昇腾 910B/C、寒武纪 MLU370/590、海光 DCU、燧原</td>
-    <td class="cn">华为昇腾生态最完善，政策驱动国产替代</td>
+    <td><strong>内存接口</strong></td>
+    <td>GPU 与 HBM 的连接带宽，决定数据搬运速度</td>
+    <td>B200: 8TB/s（HBM3E，8 颗堆叠）；Rubin: 预计 12TB/s+</td>
+    <td>内存墙问题：算力增速远超带宽增速，GPU 经常"饿着"等数据</td>
   </tr>
   <tr>
-    <td>端侧 AI 芯片</td>
-    <td>高通（骁龙 8 Gen4）、联发科（天玑 9400）、苹果（M4 系列）</td>
-    <td>端侧 NPU 算力快速提升，推动 AI on-device</td>
+    <td><strong>片间互联</strong></td>
+    <td>多颗 GPU 之间的通信通道</td>
+    <td>NVLink 5.0: 1.8TB/s（双向）；AMD Infinity Fabric: 896GB/s</td>
+    <td>跨节点互联带宽瓶颈（InfiniBand 仅 400-800Gb/s）；大规模集群的通信开销</td>
   </tr>
   <tr>
-    <td rowspan="3"><strong>AI 服务器</strong></td>
-    <td>AI 训练服务器</td>
-    <td>工业富联、浪潮信息、超聚变、Dell、HPE</td>
-    <td>搭载 8 张 GPU 的高密度服务器为主流</td>
-  </tr>
-  <tr>
-    <td>液冷散热</td>
-    <td>英维克、申菱环境、曙光数创</td>
-    <td>单机柜功率从 10kW 升至 100kW+，液冷成刚需</td>
-  </tr>
-  <tr>
-    <td>光模块</td>
-    <td class="cn">中际旭创、新易盛、天孚通信、Coherent、Lumentum</td>
-    <td>800G/1.6T 光模块是 AI 集群互联的关键</td>
-  </tr>
-  <tr>
-    <td><strong>存储</strong></td>
-    <td>HBM / DDR5 / SSD</td>
-    <td>SK海力士、三星、美光、<span class="cn">长鑫存储、长江存储</span></td>
-    <td>HBM 是 AI 芯片的"血液"，详见存储产业链图谱</td>
-  </tr>
-  <tr>
-    <td><strong>先进封装</strong></td>
-    <td>CoWoS / TSV / Chiplet</td>
-    <td>TSMC、<span class="cn">长电科技、通富微电</span></td>
-    <td>CoWoS 产能是 HBM 交付的瓶颈</td>
-  </tr>
-  <tr>
-    <td><strong>算力基础设施</strong></td>
-    <td>数据中心 / 云计算</td>
-    <td>AWS、Azure、GCP、<span class="cn">阿里云、腾讯云、华为云</span></td>
-    <td>全球 AI 算力资本开支 2025 年预计超 3,000 亿美元</td>
+    <td><strong>Chiplet 架构</strong></td>
+    <td>将大芯片拆成多个小芯片拼接，提升良率和灵活性</td>
+    <td>AMD MI300X: 13 个 Chiplet（5nm + 6nm）；Intel Ponte Vecchio: 47 个 Tile</td>
+    <td>Chiplet 间互联带宽和延迟；封装成本；EDA 工具支持</td>
   </tr>
 </table>
 
-<h3><span class="tag tag-mid">中游</span> 模型与平台层</h3>
-<p>中游是 AI 产业链的核心，包括基础大模型的训练与迭代、模型即服务（MaaS）平台、以及数据与工具链。</p>
-
+<h4>训练芯片 vs 推理芯片</h4>
 <table>
-  <tr><th>细分领域</th><th>关键环节</th><th>代表企业/产品</th><th>备注</th></tr>
+  <tr><th>维度</th><th>训练芯片</th><th>推理芯片</th></tr>
+  <tr><td><strong>核心需求</strong></td><td>高算力（FLOPS）、大内存、高带宽</td><td>低延迟、低功耗、高吞吐、低成本</td></tr>
+  <tr><td><strong>典型精度</strong></td><td>FP16/BF16（前向）+ FP32（梯度累积）</td><td>FP8/INT8/INT4（量化推理）</td></tr>
+  <tr><td><strong>代表产品</strong></td><td>NVIDIA H100/B200、AMD MI300X</td><td>NVIDIA L4/L40S、Groq LPU、Cerebras WSE-3</td></tr>
+  <tr><td><strong>A 股标的</strong></td><td>海光信息（深腾 DCU）、寒武纪（思元 590）</td><td>寒武纪（思元 370）、景嘉微（JM9）</td></tr>
+  <tr><td><strong>趋势</strong></td><td>训练集群规模从万卡向十万卡扩展</td><td>推理成本"摩尔定律"：每 18 个月成本降一半；专用推理芯片崛起（Groq/Cerebras）</td></tr>
+</table>
+
+<h4>全球主要 AI 芯片公司</h4>
+<table>
+  <tr><th>公司</th><th>产品</th><th>制程</th><th>算力（FP8）</th><th>HBM</th><th>核心优势</th></tr>
+  <tr><td><strong>NVIDIA</strong></td><td>H100 → H200 → B200 → GB200</td><td>4NP/3nm</td><td>3,958 → 9,000 TOPS</td><td>80GB → 192GB HBM3E</td><td>CUDA 生态壁垒（500 万+开发者）、NVLink 互联、全栈软件</td></tr>
+  <tr><td><strong>AMD</strong></td><td>MI300X → MI350 → MI400</td><td>5nm/3nm</td><td>2,600 TOPS</td><td>192GB HBM3</td><td>开放 ROCm 生态、性价比、Chiplet 架构成熟</td></tr>
+  <tr><td><strong>Google</strong></td><td>TPU v5p → v6 (Trillium)</td><td>5nm/3nm</td><td>定制（459 TFLOPS/chip）</td><td>HBM</td><td>自研+自用、JAX 框架深度优化、训练效率极高</td></tr>
+  <tr><td><strong>Amazon</strong></td><td>Trainium2</td><td>5nm</td><td>定制</td><td>HBM</td><td>AWS 绑定、成本比 GPU 低 30-40%</td></tr>
+  <tr><td class="cn">华为</td><td class="cn">昇腾 910B → 910C</td><td class="cn">7nm</td><td class="cn">~640 TOPS（FP16）</td><td class="cn">64GB HBM2E</td><td class="cn">CANN 算子库 + MindSpore 框架；国产唯一成熟 AI 训练生态</td></tr>
+  <tr><td class="cn">寒武纪</td><td class="cn">思元 590 → 690</td><td class="cn">7nm</td><td class="cn">~512 TOPS（FP16）</td><td class="cn">96GB HBM2E</td><td class="cn">纯正 AI 芯片标的、BANG 编程语言</td></tr>
+  <tr><td class="cn">海光信息</td><td class="cn">深腾一号 DCU</td><td class="cn">7nm</td><td class="cn">兼容 ROCm</td><td class="cn">64GB HBM2E</td><td class="cn">兼容 AMD 生态、信创+AI 双需求</td></tr>
+</table>
+
+<div class="note"><strong>核心难点：</strong>NVIDIA 的真正护城河不是芯片本身，而是 CUDA 生态（500 万+开发者、数万个优化算子、cuDNN/cuBLAS 等库）。国产芯片硬件差距在缩小（2-3 年），但软件生态差距更大（5 年+）。华为昇腾的 CANN + MindSpore 是国内最接近可用的替代方案。</div>
+
+<!-- ===== 2.2 HBM ===== -->
+<h3>2.2 HBM（高带宽存储器）</h3>
+
+<p>HBM 是 AI 芯片的"血液"——GPU 算力再强，数据喂不进去也是白搭。HBM 通过 3D 堆叠 DRAM die + TSV 硅穿孔技术，实现远超传统 DDR 的带宽。</p>
+
+<h4>HBM 技术代际演进</h4>
+<table>
+  <tr><th>代际</th><th>堆叠层数</th><th>单颗容量</th><th>带宽</th><th>配套 GPU</th><th>量产时间</th></tr>
+  <tr><td>HBM2</td><td>8 层</td><td>8GB</td><td>307 GB/s</td><td>NVIDIA V100</td><td>2018</td></tr>
+  <tr><td>HBM2E</td><td>8 层</td><td>16GB</td><td>460 GB/s</td><td>NVIDIA A100</td><td>2020</td></tr>
+  <tr><td>HBM3</td><td>8-12 层</td><td>24GB</td><td>819 GB/s</td><td>NVIDIA H100</td><td>2022</td></tr>
+  <tr class="hl"><td><strong>HBM3E</strong></td><td>8-12 层</td><td>36GB</td><td>1.18 TB/s</td><td>NVIDIA B200</td><td>2024</td></tr>
+  <tr class="hl"><td><strong>HBM4</strong></td><td>12-16 层</td><td>48GB+</td><td>2+ TB/s</td><td>NVIDIA Rubin</td><td>2025-2026</td></tr>
+  <tr><td>HBM4E</td><td>16 层+</td><td>64GB+</td><td>3+ TB/s</td><td>下一代</td><td>2027+</td></tr>
+</table>
+
+<h4>关键技术与难点</h4>
+<table>
+  <tr><th>技术环节</th><th>说明</th><th>难点</th><th>对应公司</th></tr>
   <tr>
-    <td rowspan="3"><strong>基础大模型</strong></td>
-    <td>海外闭源</td>
-    <td>OpenAI（GPT-4o/o3）、Google（Gemini 2.5）、Anthropic（Claude 4）</td>
-    <td>能力天花板，定义行业标准</td>
+    <td><strong>TSV 硅穿孔</strong></td>
+    <td>在 DRAM die 上打微孔（直径 ~5μm），用铜填充实现垂直互连</td>
+    <td>孔径越小越难对准；12 层堆叠的对准精度要求 <1μm；良率损耗大</td>
+    <td>SK海力士（自研）、<span class="cn">长电科技、通富微电</span></td>
   </tr>
   <tr>
-    <td>海外开源</td>
-    <td>Meta（Llama 4）、Mistral（Mixtral）、xAI（Grok）</td>
-    <td>开源追赶闭源，Llama 生态最庞大</td>
+    <td><strong>MR-MUF</strong></td>
+    <td>Mass Reflow Molded Underfill：SK海力士自研的封装工艺，将各层 die 一次性回流焊接+底部填充</td>
+    <td>热应力控制（12 层堆叠散热困难）；填充材料均匀性</td>
+    <td>SK海力士（专利壁垒）</td>
   </tr>
   <tr>
-    <td class="cn">国产大模型</td>
-    <td class="cn">DeepSeek、Qwen、豆包、文心、混元、GLM、Kimi、MiMo、MiniMax、阶跃星辰</td>
-    <td class="cn">DeepSeek-R1 证明国产模型可与海外对标</td>
+    <td><strong>Hybrid Bonding</strong></td>
+    <td>铜-铜直接键合（无需焊料），间距 <10μm，是 HBM4 及以后的核心技术</td>
+    <td>表面平坦度要求极高（<1nm RMS）；键合良率；设备精度</td>
+    <td>TSMC、<span class="cn">拓荆科技（设备端）</span></td>
   </tr>
   <tr>
-    <td rowspan="2"><strong>垂直模型</strong></td>
-    <td>代码生成</td>
-    <td>GitHub Copilot、Cursor、Codeium、<span class="cn">通义灵码、文心快码</span></td>
-    <td>AI 编程是最成熟的 B 端应用</td>
-  </tr>
-  <tr>
-    <td>图像/视频/音频生成</td>
-    <td>Midjourney、Stable Diffusion、Sora、Kling、<span class="cn">可灵、即梦</span></td>
-    <td>视频生成 2025 年进入实用阶段</td>
-  </tr>
-  <tr>
-    <td rowspan="2"><strong>MaaS 平台</strong></td>
-    <td>海外云平台</td>
-    <td>AWS Bedrock、Azure AI Studio、Google Vertex AI、HuggingFace</td>
-    <td>一站式模型部署与调用</td>
-  </tr>
-  <tr>
-    <td class="cn">国内云平台</td>
-    <td class="cn">阿里云百炼、火山引擎、百度千帆、华为 ModelArts、<span class="cn">硅基流动</span></td>
-    <td class="cn">价格战激烈，API 价格持续下降</td>
-  </tr>
-  <tr>
-    <td><strong>数据与标注</strong></td>
-    <td>训练数据 / 合成数据</td>
-    <td>Scale AI、Labelbox、<span class="cn">海天瑞声、数据堂</span></td>
-    <td>高质量数据是模型能力的天花板</td>
-  </tr>
-  <tr>
-    <td><strong>AI Agent 框架</strong></td>
-    <td>智能体开发平台</td>
-    <td>LangChain、AutoGPT、<span class="cn">Coze（扣子）、Dify</span></td>
-    <td>Agent 是 2025-2026 年核心应用方向</td>
+    <td><strong>基础裸片（Base Die）</strong></td>
+    <td>HBM 最底层的逻辑 die，负责与 GPU 通信。HBM4 起 base die 由 GPU 厂商定制设计</td>
+    <td>定制 base die 需要 GPU 厂商与存储厂深度协同；接口标准统一</td>
+    <td>NVIDIA/AMD（设计）、TSMC（代工）</td>
   </tr>
 </table>
 
-<h3><span class="tag tag-down">下游</span> 应用层</h3>
-<p>AI 应用正在从"尝鲜"走向"刚需"，覆盖办公、编程、营销、医疗、教育、金融、自动驾驶、机器人等多个领域。</p>
+<h4>HBM 产业链公司</h4>
+<table>
+  <tr><th>环节</th><th>公司</th><th>备注</th></tr>
+  <tr><td>DRAM die 制造</td><td>SK海力士、三星、美光</td><td>SK海力士领先（~50%+份额），三星追赶</td></tr>
+  <tr><td>TSV 钻孔/填充</td><td>Disco（切割）、<span class="cn">中微公司（TSV 刻蚀）</span></td><td>设备端国产替代空间</td></tr>
+  <tr><td>先进封装</td><td>TSMC（CoWoS）、SK海力士（MR-MUF）、<span class="cn">长电科技、通富微电</span></td><td>CoWoS 产能是瓶颈</td></tr>
+  <tr><td>封装材料</td><td>住友电木（底填料）、<span class="cn">华海诚科</span></td><td>底填料/键合丝等材料国产化</td></tr>
+  <tr><td>测试</td><td>Advantest、<span class="cn">精测电子、长川科技</span></td><td>HBM 测试复杂度远超传统 DRAM</td></tr>
+</table>
+
+<!-- ===== 2.3 先进封装 ===== -->
+<h3>2.3 先进封装（CoWoS / InFO / 3D IC）</h3>
+
+<p>先进封装是把 GPU die + HBM + I/O 芯片"拼"在一起的关键技术。没有先进封装，HBM 堆再多也无法与 GPU 高速通信。</p>
 
 <table>
-  <tr><th>应用场景</th><th>具体方向</th><th>代表企业/产品</th><th>成熟度</th></tr>
+  <tr><th>封装技术</th><th>全称</th><th>说明</th><th>代表公司</th><th>应用场景</th></tr>
   <tr>
-    <td><strong>AI 办公</strong></td>
-    <td>智能写作、会议纪要、PPT 生成、表格分析</td>
-    <td>Microsoft Copilot、Google Workspace AI、<span class="cn">飞书智能助手、腾讯文档AI、WPS AI</span></td>
-    <td>★★★★★ 最成熟</td>
+    <td><strong>CoWoS</strong></td>
+    <td>Chip-on-Wafer-on-Substrate</td>
+    <td>TSMC 核心技术：将 GPU die 和 HBM 通过硅中介层（Silicon Interposer）连接，再焊接到有机基板上</td>
+    <td>TSMC（垄断）</td>
+    <td>NVIDIA H100/B200 全系列</td>
   </tr>
   <tr>
-    <td><strong>AI 编程</strong></td>
-    <td>代码生成、补全、调试、重构</td>
-    <td>GitHub Copilot、Cursor、Windsurf、<span class="cn">通义灵码、文心快码</span></td>
-    <td>★★★★★ 最成熟</td>
+    <td><strong>InFO</strong></td>
+    <td>Integrated Fan-Out</td>
+    <td>扇出型封装，无需硅中介层，成本更低，适合中端产品</td>
+    <td>TSMC</td>
+    <td>Apple M 系列、部分推理芯片</td>
   </tr>
   <tr>
-    <td><strong>AI 搜索</strong></td>
-    <td>对话式搜索、知识问答</td>
-    <td>Perplexity、Google AI Overview、<span class="cn">秘塔搜索、Kimi 探索版</span></td>
-    <td>★★★★☆ 快速渗透</td>
+    <td><strong>EMIB</strong></td>
+    <td>Embedded Multi-die Interconnect Bridge</td>
+    <td>Intel 技术：在基板内嵌入小硅片实现 die 间互连，无需整块硅中介层</td>
+    <td>Intel</td>
+    <td>Ponte Vecchio GPU</td>
   </tr>
   <tr>
-    <td><strong>AI 营销</strong></td>
-    <td>广告素材生成、智能投放、个性化推荐</td>
-    <td>Jasper、<span class="cn">腾讯广告、字节巨量引擎</span></td>
-    <td>★★★★☆ 广告是变现最快的赛道</td>
+    <td><strong>Foveros</strong></td>
+    <td>3D 堆叠封装</td>
+    <td>Intel 的 3D 堆叠技术，die 直接面对面键合</td>
+    <td>Intel</td>
+    <td>Core Ultra 系列</td>
   </tr>
   <tr>
-    <td><strong>AI 金融</strong></td>
-    <td>智能风控、量化投研、客服、合规</td>
-    <td>Bloomberg GPT、<span class="cn">恒生电子、蚂蚁集团</span></td>
-    <td>★★★☆☆ 数据安全要求高</td>
+    <td><strong>Fan-Out WLP</strong></td>
+    <td>Fan-Out Wafer Level Package</td>
+    <td>晶圆级扇出封装，适合高密度 I/O</td>
+    <td><span class="cn">长电科技、通富微电、华天科技</span></td>
+    <td>移动芯片、中端 AI 芯片</td>
+  </tr>
+</table>
+
+<div class="note"><strong>核心瓶颈：</strong>TSMC CoWoS 产能是当前 AI 芯片交付的最大瓶颈。2025 年 CoWoS 月产能约 4 万片，仍无法满足 NVIDIA/AMD 的全部订单。TSMC 正在竹南/龙潭扩产，预计 2026 年月产能翻倍。<span class="cn">国内先进封装（长电/通富）在 2.5D 封装领域有突破，但与 CoWoS 的技术代差约 2-3 年。</span></div>
+
+<!-- ===== 2.4 光模块 ===== -->
+<h3>2.4 光模块（800G / 1.6T / CPO）</h3>
+
+<p>光模块是 AI 集群中 GPU 服务器之间互联的"高速公路"。一块 GPU 的算力再强，数据传输慢了就是瓶颈。AI 集群对光模块的需求是传统数据中心的 10-50 倍。</p>
+
+<table>
+  <tr><th>技术代际</th><th>速率</th><th>核心器件</th><th>技术难点</th><th>代表公司</th></tr>
+  <tr>
+    <td>400G（当前主流）</td>
+    <td>400 Gbps</td>
+    <td>EML 激光器 + DSP 芯片</td>
+    <td>功耗控制（~12W/模块）</td>
+    <td>中际旭创、新易盛、Coherent</td>
+  </tr>
+  <tr class="hl">
+    <td><strong>800G（当前放量）</strong></td>
+    <td>800 Gbps</td>
+    <td>EML/硅光 + 7nm DSP</td>
+    <td>信号完整性（PAM4 调制）；功耗（~18W）；热管理</td>
+    <td><span class="cn">中际旭创（出货第一）</span>、新易盛、Coherent、Lumentum</td>
+  </tr>
+  <tr class="hl">
+    <td><strong>1.6T（2025-2026）</strong></td>
+    <td>1.6 Tbps</td>
+    <td>硅光子 + 5nm DSP / LPO</td>
+    <td>功耗预算 <25W；硅光集成良率；5nm DSP 成本</td>
+    <td><span class="cn">中际旭创、新易盛</span>、Coherent、Broadcom</td>
   </tr>
   <tr>
-    <td><strong>AI 医疗</strong></td>
-    <td>辅助诊断、药物研发、医学影像</td>
-    <td>Google Med-PaLM、<span class="cn">联影智能、晶泰科技</span></td>
-    <td>★★★☆☆ 监管严格，落地较慢</td>
+    <td>3.2T（2027+）</td>
+    <td>3.2 Tbps</td>
+    <td>CPO（光电共封装）</td>
+    <td>光电芯片集成工艺；散热；标准化</td>
+    <td>Broadcom、<span class="cn">中际旭创</span></td>
+  </tr>
+</table>
+
+<h4>关键子模块与公司</h4>
+<table>
+  <tr><th>子模块</th><th>功能</th><th>技术难点</th><th>公司</th></tr>
+  <tr><td><strong>DSP 芯片</strong></td><td>信号调制/解调（PAM4）</td><td>5nm/3nm 制程；功耗；算法复杂度</td><td>Broadcom（垄断 70%+）、Marvell、<span class="cn">中际旭创（自研）</span></td></tr>
+  <tr><td><strong>激光器（EML/VCSEL）</strong></td><td>光信号发射</td><td>EML 波长稳定性；VCSEL 功率上限</td><td>Lumentum、II-VI、<span class="cn">光迅科技、长光华芯</span></td></tr>
+  <tr><td><strong>硅光芯片</strong></td><td>光电一体化集成</td><td>CMOS 工艺兼容性；耦合效率</td><td>Intel、<span class="cn">中际旭创、赛微电子</span></td></tr>
+  <tr><td><strong>TIA/Driver</strong></td><td>跨阻放大/驱动</td><td>高速模拟电路设计</td><td>MACOM、<span class="cn">源杰科技</span></td></tr>
+  <tr><td><strong>光纤连接器</strong></td><td>物理连接</td><td>MPO 高密度连接精度</td><td><span class="cn">天孚通信</span>（全球领先）、US Conec</td></tr>
+</table>
+
+<div class="note"><strong>CPO（Co-Packaged Optics）趋势：</strong>将光模块直接集成到交换芯片封装内，消除传统可插拔光模块的功耗和延迟开销。是 3.2T 时代的核心方向，但也意味着光模块行业从"可插拔独立模块"向"芯片级集成"转型，对传统光模块厂是颠覆性挑战。<span class="cn">中际旭创、新易盛已在布局。</span></div>
+
+<!-- ===== 2.5 网络设备 ===== -->
+<h3>2.5 网络设备（交换机 / RDMA / InfiniBand）</h3>
+
+<p>万卡/十万卡 GPU 集群的核心挑战不是单卡算力，而是<strong>通信效率</strong>。训练大模型时，每张 GPU 都需要频繁地与其他 GPU 同步梯度，网络带宽和延迟直接决定了集群的"有效算力"。</p>
+
+<table>
+  <tr><th>技术</th><th>说明</th><th>带宽</th><th>延迟</th><th>公司</th></tr>
+  <tr>
+    <td><strong>InfiniBand</strong></td>
+    <td>NVIDIA 旗下高性能网络协议，AI 训练集群的"标配"</td>
+    <td>NDR 400Gb/s → XDR 800Gb/s</td>
+    <td>~0.6μs</td>
+    <td>NVIDIA（收购 Mellanox，垄断）</td>
   </tr>
   <tr>
-    <td><strong>AI 教育</strong></td>
-    <td>个性化学习、智能辅导、题库生成</td>
-    <td>Duolingo Max、Khan Academy Khanmigo、<span class="cn">学而思 AI、猿辅导</span></td>
-    <td>★★★☆☆ 政策敏感</td>
+    <td><strong>RoCE v2</strong></td>
+    <td>基于以太网的 RDMA 协议，成本比 IB 低 30-50%</td>
+    <td>400Gb/s → 800Gb/s</td>
+    <td>~1.5μs</td>
+    <td>Broadcom、<span class="cn">华为、中兴、锐捷网络</span></td>
   </tr>
   <tr>
-    <td><strong>自动驾驶</strong></td>
-    <td>L3/L4 级无人驾驶、端到端智驾</td>
-    <td>特斯拉 FSD、Waymo、<span class="cn">华为 ADS、小鹏 XNGP、百度 Apollo</span></td>
-    <td>★★★☆☆ L3 商业化初期</td>
+    <td><strong>UALink</strong></td>
+    <td>AMD/Intel/Google 主导的开放 GPU 互联标准，对标 NVLink</td>
+    <td>200Gb/s → 400Gb/s</td>
+    <td>~1μs</td>
+    <td>AMD、Intel、Broadcom（联盟）</td>
   </tr>
   <tr>
-    <td><strong>具身智能/机器人</strong></td>
-    <td>人形机器人、工业机器人</td>
+    <td><strong>交换芯片</strong></td>
+    <td>网络交换机的核心 ASIC</td>
+    <td>Broadcom Tomahawk 5: 51.2Tbps</td>
+    <td>纳秒级</td>
+    <td>Broadcom（垄断）、<span class="cn">盛科通信、中兴微</span></td>
+  </tr>
+</table>
+
+<div class="note"><strong>核心矛盾：</strong>NVIDIA 同时垄断 GPU + NVLink + InfiniBand，形成了从芯片到网络的垂直整合。竞争对手（AMD/Intel/Google）联合推出 UALink + Ultra Ethernet 试图打破封锁，但生态建设需要时间。</div>
+
+<!-- ===== 2.6 液冷散热 ===== -->
+<h3>2.6 液冷散热</h3>
+
+<p>单台 AI 服务器（8 卡）功耗从 A100 的 ~6.5kW 飙升到 GB200 NVL72 的 ~120kW，传统风冷已完全无法应对。液冷从"可选"变成"刚需"。</p>
+
+<table>
+  <tr><th>技术路线</th><th>原理</th><th>散热能力</th><th>改造成本</th><th>公司</th></tr>
+  <tr>
+    <td><strong>冷板式液冷</strong></td>
+    <td>液冷板贴在芯片表面，冷却液循环带走热量</td>
+    <td>单机柜 50-80kW</td>
+    <td>中等（需改造机柜）</td>
+    <td><span class="cn">英维克、曙光数创</span>、Vertiv</td>
+  </tr>
+  <tr>
+    <td><strong>浸没式液冷</strong></td>
+    <td>整台服务器浸泡在绝缘冷却液中</td>
+    <td>单机柜 100kW+</td>
+    <td>高（需新建液冷机房）</td>
+    <td><span class="cn">中科曙光、绿色云图</span>、GRC</td>
+  </tr>
+  <tr>
+    <td><strong>相变冷却</strong></td>
+    <td>冷却液在芯片表面沸腾蒸发吸热</td>
+    <td>单机柜 200kW+</td>
+    <td>极高（前沿方案）</td>
+    <td>GRC、<span class="cn">中科曙光</span></td>
+  </tr>
+</table>
+
+<!-- ===== 2.7 电源 ===== -->
+<h3>2.7 数据中心电源（PSU / UPS / 配电）</h3>
+
+<p>AI 数据中心的电力需求正在爆发。一个 100MW 的 AI 数据中心年耗电量约 8.76 亿度（相当于一个中等县城）。</p>
+
+<table>
+  <tr><th>环节</th><th>说明</th><th>趋势</th><th>公司</th></tr>
+  <tr><td>服务器 PSU</td><td>单 PSU 功率从 3kW 升至 5.5kW+，800V HVDC 架构</td><td>效率从 80 Plus 钛金级向更高演进</td><td>台达电、<span class="cn">良信股份、麦格米特</span></td></tr>
+  <tr><td>UPS/BBU</td><td>电池备电单元，保证断电不丢数据</td><td>锂电池替代铅酸；BBU 内置到服务器机柜</td><td>Vertiv、<span class="cn">科华数据、南都电源</span></td></tr>
+  <tr><td>配电/变压器</td><td>高压输电→低压配电→机柜供电</td><td>800V 直配电架构减少转换损耗</td><td><span class="cn">特变电工、正泰电器</span></td></tr>
+</table>
+
+
+<!-- ================================================================ -->
+<!--                     中游：模型与平台层                            -->
+<!-- ================================================================ -->
+
+<h2><span class="tag tag-mid">中游</span> 模型与平台层</h2>
+<p>中游是 AI 的"大脑"。大模型的能力上限由三个要素决定：<strong>架构设计</strong>（怎么组织参数）、<strong>训练数据</strong>（用什么教模型）、<strong>训练方法</strong>（怎么教模型）。</p>
+
+<!-- ===== 3.1 基础大模型架构 ===== -->
+<h3>3.1 基础大模型：架构与技术演进</h3>
+
+<h4>Transformer 架构的核心组件</h4>
+<table>
+  <tr><th>组件</th><th>功能</th><th>技术演进</th><th>难点</th></tr>
+  <tr>
+    <td><strong>Attention 机制</strong></td>
+    <td>让模型"关注"输入中最相关的部分（Q·K^T·V）</td>
+    <td>Multi-Head → Multi-Query → Grouped-Query → Multi-Head Latent Attention（MLA）</td>
+    <td>标准 Attention 复杂度 O(n²)，长序列计算量爆炸</td>
+  </tr>
+  <tr>
+    <td><strong>位置编码</strong></td>
+    <td>告诉模型每个 token 的位置</td>
+    <td>Sinusoidal → RoPE（旋转位置编码）→ YaRN → 无限上下文</td>
+    <td>外推到训练时未见过的长度时性能下降</td>
+  </tr>
+  <tr>
+    <td><strong>FFN（前馈网络）</strong></td>
+    <td>每个 token 独立经过的非线性变换层</td>
+    <td>标准 FFN → SwiGLU → MoE（稀疏专家混合）</td>
+    <td>MoE 的专家负载均衡和路由策略</td>
+  </tr>
+  <tr>
+    <td><strong>归一化</strong></td>
+    <td>稳定训练过程</td>
+    <td>LayerNorm → RMSNorm → DeepNorm</td>
+    <td>超深网络（100+ 层）的训练稳定性</td></tr>
+</table>
+
+<h4>MoE（Mixture of Experts）架构 — 当前最重要的架构创新</h4>
+<p>MoE 是 DeepSeek、Mixtral、Qwen、腾讯混元等模型的核心架构。思路很简单：模型有几百个"专家"子网络，但每次推理只激活其中一小部分（如 8/128），从而用大模型的能力但只付出小模型的计算成本。</p>
+
+<table>
+  <tr><th>模型</th><th>总参数</th><th>激活参数</th><th>专家数</th><th>激活专家</th><th>核心创新</th></tr>
+  <tr class="hl"><td><strong>DeepSeek-V3</strong></td><td>671B</td><td>37B</td><td>256</td><td>8</td><td>MLA + DeepSeekMoE + 辅助损失自由负载均衡</td></tr>
+  <tr><td>Mixtral 8x22B</td><td>176B</td><td>39B</td><td>8</td><td>2</td><td>经典 Top-2 路由</td></tr>
+  <tr><td>Llama 4 Scout</td><td>109B</td><td>17B</td><td>16</td><td>4</td><td>Meta 首个 MoE 架构</td></tr>
+  <tr><td>Qwen2.5-MoE</td><td>14.3B（活跃）</td><td>2.7B</td><td>60</td><td>4</td><td>小模型 MoE，效率极高</td></tr>
+  <tr><td class="cn">腾讯混元</td><td class="cn">万亿级</td><td class="cn">-</td><td class="cn">-</td><td class="cn">-</td><td class="cn">万亿参数 MoE，开源</td></tr>
+</table>
+
+<div class="note"><strong>DeepSeek 的核心突破：</strong>① MLA（Multi-Head Latent Attention）将 KV Cache 压缩到原来的 1/5-1/10，大幅降低推理内存需求；② 辅助损失自由的负载均衡策略，让专家分工更均匀；③ FP8 混合精度训练，在 H800（非顶级 GPU）上完成了 671B 模型的训练，成本仅 557 万美元（OpenAI GPT-4 训练成本的 1/10）。</div>
+
+<h4>非 Transformer 架构探索</h4>
+<table>
+  <tr><th>架构</th><th>核心思路</th><th>优势</th><th>代表模型</th><th>现状</th></tr>
+  <tr>
+    <td><strong>SSM / Mamba</strong></td>
+    <td>状态空间模型，用线性递推替代 Attention</td>
+    <td>推理复杂度 O(1)（vs Attention O(n²)）；长序列效率极高</td>
+    <td>Mamba-2、Jamba（AI21，Mamba+Transformer 混合）</td>
+    <td>纯 SSM 在语言任务上仍弱于 Transformer；混合架构有潜力</td>
+  </tr>
+  <tr>
+    <td><strong>RWKV</strong></td>
+    <td>线性 Attention + RNN 结构</td>
+    <td>推理时像 RNN 一样 O(1) 复杂度；可并行训练</td>
+    <td>RWKV-6</td>
+    <td>开源社区活跃，但工业界采用有限</td>
+  </tr>
+</table>
+
+<!-- ===== 3.2 训练技术 ===== -->
+<h3>3.2 训练技术</h3>
+
+<table>
+  <tr><th>技术</th><th>说明</th><th>难点</th><th>对应公司/框架</th></tr>
+  <tr>
+    <td><strong>分布式训练</strong></td>
+    <td>将模型切分到数千张 GPU 上并行训练：数据并行（DP）+ 张量并行（TP）+ 流水线并行（PP）+ 专家并行（EP）</td>
+    <td>通信开销占比从 10% 升至 30%+；GPU 故障容错（万卡集群每天坏卡 2-5 张）；checkpoint 策略</td>
+    <td>Megatron-LM（NVIDIA）、DeepSpeed（微软）、<span class="cn">PaddlePaddle（百度）</span></td>
+  </tr>
+  <tr>
+    <td><strong>RLHF / RLAIF</strong></td>
+    <td>人类反馈强化学习：用人类偏好数据训练奖励模型，再用 PPO/GRPO 优化策略</td>
+    <td>人类标注成本高（$10-50/条）；奖励模型"黑客"（模型学会骗奖励而非真正变好）</td>
+    <td>OpenAI、Anthropic、<span class="cn">DeepSeek（GRPO 创新）</span></td>
+  </tr>
+  <tr>
+    <td><strong>合成数据</strong></td>
+    <td>用大模型生成训练数据，解决高质量数据枯竭问题</td>
+    <td>"模型坍缩"风险（用 AI 数据训练 AI 会退化）；数据多样性不足</td>
+    <td>Scale AI、<span class="cn">智谱、阶跃星辰</span></td>
+  </tr>
+  <tr>
+    <td><strong>长上下文训练</strong></td>
+    <td>将模型的上下文窗口从 4K 扩展到 128K-10M</td>
+    <td>Attention O(n²) 计算爆炸；位置编码外推；训练数据中缺乏长文档</td>
+    <td>Google（1M context）、Meta（Llama 4 Scout 10M）、<span class="cn">月之暗面（200万字）</span></td>
+  </tr>
+</table>
+
+<!-- ===== 3.3 多模态模型 ===== -->
+<h3>3.3 多模态模型（视觉 + 语言 + 音频 + 视频）</h3>
+
+<table>
+  <tr><th>模态</th><th>技术路线</th><th>代表模型</th><th>技术难点</th><th>A 股标的</th></tr>
+  <tr>
+    <td><strong>视觉-语言</strong></td>
+    <td>ViT 编码器 + 投影层 + LLM（如 LLaVA 架构）；或原生多模态（GPT-4o）</td>
+    <td>GPT-4o、Gemini 2.5、Qwen-VL、<span class="cn">GLM-4V</span></td>
+    <td>视觉 token 数量过大（一张图 ~576 tokens）；空间推理能力弱</td>
+    <td><span class="cn">科大讯飞、虹软科技</span></td>
+  </tr>
+  <tr>
+    <td><strong>视频生成</strong></td>
+    <td>DiT（Diffusion Transformer）架构；时空注意力机制</td>
+    <td>Sora（OpenAI）、<span class="cn">可灵（快手）、即梦（字节）</span>、Runway Gen-3</td>
+    <td>长视频时序一致性（>30 秒易崩）；物理规律模拟；生成成本极高</td>
+    <td><span class="cn">快手、万兴科技</span></td>
+  </tr>
+  <tr>
+    <td><strong>语音/音乐</strong></td>
+    <td>音频 codec（如 EnCodec）+ 自回归生成</td>
+    <td>GPT-4o 语音、<span class="cn">豆包语音、MiniMax 海螺音乐</span></td>
+    <td>实时对话延迟（需 <500ms）；情感表达自然度</td>
+    <td><span class="cn">科大讯飞、MiniMax</span></td>
+  </tr>
+</table>
+
+<!-- ===== 3.4 推理优化 ===== -->
+<h3>3.4 推理优化（让模型跑得更快更便宜）</h3>
+
+<p>推理成本是 AI 大规模商业化的关键瓶颈。一次 GPT-4 级别的对话，2023 年成本约 $0.1，2025 年降至 $0.001-0.01，降幅超 90%。这背后是多项推理优化技术的叠加。</p>
+
+<table>
+  <tr><th>技术</th><th>原理</th><th>效果</th><th>难点</th><th>公司</th></tr>
+  <tr>
+    <td><strong>量化（Quantization）</strong></td>
+    <td>将 FP16 权重压缩到 INT8/INT4，减少内存和计算量</td>
+    <td>内存减半，速度提升 1.5-2x</td>
+    <td>低比特（INT4）精度损失；对不同层的敏感度不同</td>
+    <td>GPTQ、AWQ、<span class="cn">SmoothQuant</span></td>
+  </tr>
+  <tr>
+    <td><strong>KV Cache 优化</strong></td>
+    <td>缓存已计算的 Key/Value 向量，避免重复计算</td>
+    <td>PagedAttention（vLLM）减少内存碎片 50%+</td>
+    <td>长序列 KV Cache 内存占用大；多请求共享 KV Cache 的策略</td>
+    <td>vLLM、TensorRT-LLM、<span class="cn">SGLang</span></td>
+  </tr>
+  <tr>
+    <td><strong>推测解码（Speculative Decoding）</strong></td>
+    <td>用小模型快速"猜"多个 token，大模型一次性验证</td>
+    <td>推理速度提升 2-3x</td>
+    <td>小模型猜中率决定效果；实现复杂度</td>
+    <td>Google、DeepSeek</td>
+  </tr>
+  <tr>
+    <td><strong>模型蒸馏</strong></td>
+    <td>用大模型（教师）的输出训练小模型（学生）</td>
+    <td>7B 模型可获得 70B 模型 80-90% 的能力</td>
+    <td>能力损失不可控；蒸馏数据质量依赖教师模型</td>
+    <td>Google、Meta、<span class="cn">DeepSeek</span></td>
+  </tr>
+  <tr>
+    <td><strong>推理芯片专用化</strong></td>
+    <td>为推理场景定制的 ASIC，去掉训练不需要的功能</td>
+    <td>Groq LPU 推理速度 500+ tokens/s（vs GPU 50-100）</td>
+    <td>灵活性差（只能跑特定模型）；生态薄弱</td>
+    <td>Groq、Cerebras、<span class="cn">寒武纪</span></td>
+  </tr>
+</table>
+
+<h4>主要推理框架与云平台</h4>
+<table>
+  <tr><th>类型</th><th>产品</th><th>特点</th><th>公司</th></tr>
+  <tr><td>开源推理框架</td><td>vLLM、TensorRT-LLM、SGLang、llama.cpp</td><td>开源社区驱动，性能持续优化</td><td>UC Berkeley（vLLM）、NVIDIA、<span class="cn">社区</span></td></tr>
+  <tr><td>云端 MaaS</td><td>OpenAI API、Anthropic API、Google Vertex AI</td><td>海外主流，按 token 计费</td><td>OpenAI、Anthropic、Google</td></tr>
+  <tr><td class="cn">国内 MaaS</td><td class="cn">火山引擎、阿里百炼、硅基流动、Together AI</td><td class="cn">价格战激烈，支持国产模型</td><td class="cn">字节、阿里、<span class="cn">硅基流动</span></td></tr>
+</table>
+
+<!-- ===== 3.5 AI Agent ===== -->
+<h3>3.5 AI Agent（智能体）</h3>
+
+<p>Agent 是 2025-2026 年 AI 应用的核心方向。从"模型回答问题"进化为"模型自主完成任务"。</p>
+
+<h4>Agent 技术栈</h4>
+<table>
+  <tr><th>能力层</th><th>说明</th><th>技术难点</th><th>代表产品</th></tr>
+  <tr>
+    <td><strong>规划（Planning）</strong></td>
+    <td>将复杂任务拆解为子任务序列（如 ReAct、CoT、Tree-of-Thought）</td>
+    <td>长链规划错误累积（做 10 步以上容易跑偏）；回溯和纠错能力弱</td>
+    <td>OpenAI o3/o4、<span class="cn">DeepSeek-R1</span></td>
+  </tr>
+  <tr>
+    <td><strong>工具调用（Tool Use）</strong></td>
+    <td>调用 API、数据库、代码执行器、浏览器等外部工具</td>
+    <td>函数描述格式标准化；多工具编排的错误处理；安全沙箱</td>
+    <td>OpenAI Function Calling、Anthropic Tool Use、<span class="cn">Coze</span></td>
+  </tr>
+  <tr>
+    <td><strong>记忆（Memory）</strong></td>
+    <td>短期（对话上下文）+ 长期（向量数据库存储的历史交互）</td>
+    <td>长期记忆检索的准确率；记忆冲突解决；隐私保护</td>
+    <td>MemGPT、<span class="cn">Dify</span></td>
+  </tr>
+  <tr>
+    <td><strong>多 Agent 协作</strong></td>
+    <td>多个 Agent 分工协作完成复杂任务</td>
+    <td>Agent 间通信协议；任务分配策略；死锁和循环问题</td>
+    <td>AutoGen（微软）、CrewAI、<span class="cn">Coze 多 Agent</span></td>
+  </tr>
+  <tr>
+    <td><strong>计算机使用（Computer Use）</strong></td>
+    <td>Agent 直接操作电脑界面（鼠标点击、键盘输入、屏幕截图理解）</td>
+    <td>UI 元素识别准确性；操作延迟；跨平台兼容</td>
+    <td>Anthropic Computer Use、OpenAI Operator、<span class="cn">智谱 AutoGLM</span></td>
+  </tr>
+</table>
+
+<!-- ===== 3.6 数据层 ===== -->
+<h3>3.6 数据层（训练数据 / 标注 / 合成）</h3>
+
+<table>
+  <tr><th>环节</th><th>说明</th><th>难点</th><th>公司</th></tr>
+  <tr><td>数据采集</td><td>互联网爬取、书籍扫描、授权数据集</td><td>版权合规（NYT 诉 OpenAI 案）；数据质量参差</td><td>Common Crawl、<span class="cn">数据堂</span></td></tr>
+  <tr><td>数据清洗</td><td>去重、过滤低质量内容、毒性过滤</td><td>多语言清洗标准不统一；隐性偏见过滤</td><td><span class="cn">海天瑞声</span></td></tr>
+  <tr><td>人工标注</td><td>人类标注偏好数据（RLHF）+ 微调数据</td><td>标注成本高（$10-50/条偏好数据）；标注质量一致性</td><td>Scale AI、<span class="cn">海天瑞声、数据堂</span></td></tr>
+  <tr><td>合成数据</td><td>用大模型生成训练数据</td><td>模型坍缩；多样性不足；质量评估困难</td><td>Scale AI（合成）、<span class="cn">智谱</span></td></tr>
+  <tr><td>数据合规</td><td>GDPR、个人信息保护法合规</td><td>各国法规差异大；训练数据溯源困难</td><td><span class="cn">蚂蚁集团、百度</span></td></tr>
+</table>
+
+
+<!-- ================================================================ -->
+<!--                       下游：应用层                                -->
+<!-- ================================================================ -->
+
+<h2><span class="tag tag-down">下游</span> 应用层</h2>
+
+<!-- ===== 4.1 AI 办公 ===== -->
+<h3>4.1 AI 办公</h3>
+<table>
+  <tr><th>子场景</th><th>技术实现</th><th>难点</th><th>代表产品</th></tr>
+  <tr>
+    <td>文档写作</td>
+    <td>长文本生成 + RAG（检索增强生成，从企业知识库中检索相关内容辅助生成）</td>
+    <td>幻觉控制（编造事实）；企业数据安全（数据不能泄露给第三方模型）</td>
+    <td>Microsoft Copilot、<span class="cn">WPS AI、飞书智能助手、腾讯文档 AI</span></td>
+  </tr>
+  <tr>
+    <td>会议纪要</td>
+    <td>ASR（语音识别）+ Speaker Diarization（说话人分离）+ LLM 摘要</td>
+    <td>多人重叠语音识别；专业术语准确率；实时性</td>
+    <td>Zoom AI Companion、<span class="cn">飞书妙记、腾讯会议 AI</span></td>
+  </tr>
+  <tr>
+    <td>数据分析</td>
+    <td>NL2SQL（自然语言转 SQL 查询）+ 可视化自动生成</td>
+    <td>复杂查询的 SQL 准确率；数据安全（查询涉及敏感数据）</td>
+    <td>ChatGPT Code Interpreter、<span class="cn">网易有数、帆软</span></td>
+  </tr>
+</table>
+
+<!-- ===== 4.2 AI 编程 ===== -->
+<h3>4.2 AI 编程</h3>
+<table>
+  <tr><th>子场景</th><th>技术实现</th><th>难点</th><th>代表产品</th></tr>
+  <tr>
+    <td>代码补全</td>
+    <td>FIM（Fill-in-the-Middle）训练：模型在光标位置预测后续代码</td>
+    <td>上下文理解（只看当前文件 vs 理解整个仓库）；延迟（需 <200ms）</td>
+    <td>GitHub Copilot、Cursor、<span class="cn">通义灵码</span></td>
+  </tr>
+  <tr>
+    <td>代码 Agent</td>
+    <td>终端命令执行 + 文件读写 + 多文件编辑 + 测试运行</td>
+    <td>安全沙箱（防止 Agent 执行危险命令）；大型代码库的导航；错误修复的迭代效率</td>
+    <td>Cursor Agent、Windsurf、<span class="cn">Claude Code</span></td>
+  </tr>
+  <tr>
+    <td>代码审查</td>
+    <td>PR Diff 分析 + 规则匹配 + LLM 审查建议</td>
+    <td>误报率高；安全性漏洞检测的准确性</td>
+    <td>CodeRabbit、<span class="cn">通义灵码</span></td>
+  </tr>
+</table>
+
+<!-- ===== 4.3 自动驾驶 ===== -->
+<h3>4.3 自动驾驶</h3>
+<table>
+  <tr><th>技术路线</th><th>说明</th><th>难点</th><th>代表公司</th></tr>
+  <tr>
+    <td><strong>端到端模型</strong></td>
+    <td>传感器输入 → 神经网络 → 直接输出控制指令（油门/刹车/转向），中间不做模块化拆分</td>
+    <td>可解释性差（出了事故不知道为什么）；长尾场景覆盖；仿真数据与真实数据的 gap</td>
+    <td>特斯拉 FSD v13、<span class="cn">小鹏 XNGP、华为 ADS 3.0</span></td>
+  </tr>
+  <tr>
+    <td><strong>多传感器融合</strong></td>
+    <td>摄像头 + 激光雷达 + 毫米波雷达融合感知</td>
+    <td>不同传感器的时间同步和空间标定；恶劣天气下的传感器退化</td>
+    <td><span class="cn">华为 ADS、蔚来 NOP+</span>、Waymo</td>
+  </tr>
+  <tr>
+    <td><strong>VLM 自动驾驶</strong></td>
+    <td>用视觉语言模型理解复杂场景语义（如"前方施工区域"）</td>
+    <td>推理延迟（VLM 推理需 100ms+，实时驾驶要求 <50ms）；可靠性</td>
+    <td><span class="cn">小鹏、理想</span>、Wayve</td>
+  </tr>
+</table>
+
+<!-- ===== 4.4 具身智能 / 机器人 ===== -->
+<h3>4.4 具身智能 / 机器人</h3>
+<table>
+  <tr><th>技术环节</th><th>说明</th><th>难点</th><th>代表公司</th></tr>
+  <tr>
+    <td><strong>具身大模型</strong></td>
+    <td>将 LLM 的"大脑"能力与机器人"身体"结合，实现语言指令→动作规划→执行</td>
+    <td>Sim-to-Real gap（仿真环境训练的策略在真实世界失效）；泛化能力差</td>
+    <td>Google RT-2、<span class="cn">智元机器人、宇树科技</span></td>
+  </tr>
+  <tr>
+    <td><strong>灵巧操作</strong></td>
+    <td>机器人手的精细操作（抓取、拧螺丝、叠衣服）</td>
+    <td>触觉传感器精度；力控制；柔性物体操作</td>
+    <td>Figure、<span class="cn">因时机器人、帕西尼感知</span></td>
+  </tr>
+  <tr>
+    <td><strong>人形机器人整机</strong></td>
+    <td>双足行走 + 上肢操作 + 全身协调</td>
+    <td>关节电机功率密度；电池续航（当前仅 1-2 小时）；安全标准</td>
     <td>Figure、特斯拉 Optimus、<span class="cn">宇树科技、优必选、智元机器人</span></td>
-    <td>★★☆☆☆ 早期阶段，潜力巨大</td>
-  </tr>
-  <tr>
-    <td><strong>AI 硬件终端</strong></td>
-    <td>AI 手机、AI PC、AI 眼镜</td>
-    <td>Apple Intelligence、Meta Ray-Ban、<span class="cn">小米（AI眼镜+澎湃OS）、OPPO、vivo</span></td>
-    <td>★★★★☆ 端侧 AI 快速落地</td>
-  </tr>
-  <tr>
-    <td><strong>AI Agent</strong></td>
-    <td>自主任务执行、工作流自动化</td>
-    <td>OpenAI Operator、Anthropic Claude Agent、<span class="cn">Coze、Dify</span></td>
-    <td>★★★☆☆ 2025 年主线方向</td>
   </tr>
 </table>
 
-<!-- ==================== 三、产业链关系图 ==================== -->
-<h2>三、AI 产业链关系图</h2>
+<!-- ===== 4.5 AI 医疗 ===== -->
+<h3>4.5 AI 医疗</h3>
+<table>
+  <tr><th>子场景</th><th>技术实现</th><th>难点</th><th>代表公司</th></tr>
+  <tr>
+    <td>辅助诊断</td>
+    <td>医学影像（CT/MRI/X光）+ CNN/ViT 识别病灶</td>
+    <td>标注数据稀缺（需专业医生标注）；监管审批（NMPA/FDA）周期长</td>
+    <td><span class="cn">联影智能、鹰瞳科技</span>、Paige AI</td>
+  </tr>
+  <tr>
+    <td>药物研发</td>
+    <td>蛋白质结构预测（AlphaFold）+ 分子生成 + 临床试验优化</td>
+    <td>湿实验验证成本高；AI 预测的分子可合成性</td>
+    <td>Isomorphic Labs、<span class="cn">晶泰科技、英矽智能</span></td>
+  </tr>
+  <tr>
+    <td>AI 问诊</td>
+    <td>医学知识图谱 + LLM 对话</td>
+    <td>医疗幻觉风险极高（错误诊断可能致命）；合规要求</td>
+    <td><span class="cn">百度灵医、微医</span></td>
+  </tr>
+</table>
+
+<!-- ===== 4.6 AI 终端 ===== -->
+<h3>4.6 端侧 AI（AI 手机 / AI PC / AI 眼镜）</h3>
+<table>
+  <tr><th>终端</th><th>AI 能力</th><th>端侧芯片</th><th>代表产品</th><th>技术难点</th></tr>
+  <tr>
+    <td><strong>AI 手机</strong></td>
+    <td>端侧 LLM（7B-13B）运行、AI 拍照/修图、智能摘要、实时翻译</td>
+    <td>高通骁龙 8 Gen4（75 TOPS NPU）、联发科天玑 9400（46 TOPS）、<span class="cn">小米澎湃芯片</span></td>
+    <td>Apple Intelligence、<span class="cn">小米 HyperOS AI、OPPO Find X8 AI</span></td>
+    <td>端侧模型能力上限（7B vs 云端 100B+）；内存限制（手机 12-16GB）；功耗</td>
+  </tr>
+  <tr>
+    <td><strong>AI PC</strong></td>
+    <td>端侧 Copilot、本地知识库 RAG、AI 视频会议</td>
+    <td>Apple M4（38 TOPS NPU）、Intel Lunar Lake（48 TOPS）、高通骁龙 X Elite（45 TOPS）</td>
+    <td>MacBook AI、<span class="cn">联想小新 AI</span>、Surface Copilot+ PC</td>
+    <td>散热设计（NPU 持续高负载发热）；软件生态（NPU 算子库不完善）</td>
+  </tr>
+  <tr>
+    <td><strong>AI 眼镜</strong></td>
+    <td>第一视角视觉理解、实时翻译、AR 信息叠加</td>
+    <td>高通 AR1 Gen1、<span class="cn">恒玄科技 BES</span></td>
+    <td>Meta Ray-Ban、<span class="cn">小米 AI 眼镜、Rokid</span></td>
+    <td>续航（当前 2-4 小时）；散热（镜腿空间极小）；隐私争议</td>
+  </tr>
+</table>
+
+<!-- ================================================================ -->
+<!--                        Mermaid 关系图                             -->
+<!-- ================================================================ -->
+
+<h2>产业链关系图</h2>
 <div class="mermaid">
 graph TB
-    subgraph UP["&nbsp;&nbsp;上游 — 算力基础设施&nbsp;&nbsp;"]
-        GPU["AI 芯片<br/>NVIDIA H100/B200<br/>AMD MI300X<br/>华为昇腾 910C"]
-        SERVER["AI 服务器<br/>工业富联 · 浪潮信息<br/>超聚变 · Dell"]
-        HBM["HBM 存储<br/>SK海力士 · 三星 · 美光<br/>长鑫存储"]
-        PKG["先进封装<br/>TSMC CoWoS<br/>长电科技 · 通富微电"]
-        OPTIC["光模块<br/>中际旭创 · 新易盛<br/>Coherent"]
-        DC["数据中心 / 云<br/>AWS · Azure · GCP<br/>阿里云 · 腾讯云 · 华为云"]
+    subgraph UP["上游 — 算力基础设施"]
+        GPU["AI 芯片<br/>NVIDIA B200 · AMD MI300X<br/>华为昇腾 910C · 寒武纪 590<br/>海光 DCU"]
+        HBM2["HBM 存储<br/>SK海力士 · 三星 · 美光<br/>TSV · MR-MUF · Hybrid Bonding"]
+        PKG["先进封装<br/>TSMC CoWoS · InFO<br/>长电科技 · 通富微电"]
+        OPTIC["光模块<br/>800G/1.6T/CPO<br/>中际旭创 · 新易盛 · 天孚通信"]
+        NET["网络设备<br/>InfiniBand · RoCE · UALink<br/>NVIDIA · Broadcom · 华为"]
+        COOL["液冷散热<br/>冷板式 · 浸没式<br/>英维克 · 曙光数创"]
+        PWR["电源/配电<br/>PSU · UPS · BBU<br/>良信股份 · 科华数据"]
     end
 
-    subgraph MID["&nbsp;&nbsp;中游 — 模型与平台&nbsp;&nbsp;"]
-        MODEL_O["海外大模型<br/>OpenAI GPT-4o/o3<br/>Google Gemini 2.5<br/>Anthropic Claude 4<br/>Meta Llama 4"]
-        MODEL_C["国产大模型<br/>DeepSeek R1/V3<br/>阿里 Qwen2.5<br/>字节豆包 · 腾讯混元<br/>百度文心 · 智谱 GLM<br/>Kimi · 小米 MiMo"]
-        MAAS["MaaS 平台<br/>AWS Bedrock · Azure AI<br/>阿里百炼 · 火山引擎<br/>HuggingFace"]
-        AGENT["Agent 框架<br/>LangChain · Coze<br/>Dify · Claude Agent"]
-        DATA["数据与标注<br/>Scale AI<br/>海天瑞声"]
+    subgraph MID["中游 — 模型与平台"]
+        ARCH["模型架构<br/>Transformer · MoE · SSM<br/>Attention · FFN · 位置编码"]
+        TRAIN["训练技术<br/>分布式训练 · RLHF/GRPO<br/>合成数据 · 长上下文"]
+        MULTI["多模态<br/>视觉语言 · 视频生成<br/>语音合成 · 3D 生成"]
+        INFER["推理优化<br/>量化 · KV Cache · 推测解码<br/>蒸馏 · vLLM · TensorRT"]
+        AGENT["AI Agent<br/>规划 · 工具调用 · 记忆<br/>多Agent · Computer Use"]
+        DATA["数据层<br/>采集 · 清洗 · 标注 · 合成<br/>Scale AI · 海天瑞声"]
     end
 
-    subgraph DOWN["&nbsp;&nbsp;下游 — 应用&nbsp;&nbsp;"]
-        OFFICE["AI 办公<br/>Copilot · 飞书AI<br/>WPS AI"]
-        CODE["AI 编程<br/>Copilot · Cursor<br/>通义灵码"]
-        SEARCH["AI 搜索<br/>Perplexity<br/>秘塔搜索"]
-        AD["AI 营销<br/>Jasper · 腾讯广告"]
-        CAR["自动驾驶<br/>特斯拉 FSD<br/>华为 ADS"]
-        ROBOT["具身智能<br/>Figure · 宇树<br/>特斯拉 Optimus"]
-        DEVICE["AI 终端<br/>Apple Intelligence<br/>Meta AI 眼镜<br/>小米 AI 眼镜 · 澎湃OS"]
+    subgraph DOWN["下游 — 应用"]
+        OFFICE["AI 办公<br/>Copilot · WPS AI<br/>飞书 · 腾讯文档"]
+        CODE["AI 编程<br/>Cursor · Copilot<br/>通义灵码 · Claude Code"]
+        CAR["自动驾驶<br/>端到端 · VLM<br/>特斯拉 FSD · 华为 ADS"]
+        ROBOT["具身智能<br/>人形机器人 · 灵巧操作<br/>Figure · 宇树 · 优必选"]
+        MED["AI 医疗<br/>辅助诊断 · 药物研发<br/>联影智能 · 晶泰科技"]
+        DEVICE["端侧 AI<br/>AI手机 · AI PC · AI眼镜<br/>Apple · 小米 · Meta"]
     end
 
-    GPU & HBM & PKG --> SERVER
-    SERVER & OPTIC --> DC
-    DC --> MODEL_O & MODEL_C
-    MODEL_O & MODEL_C --> MAAS & AGENT & DATA
-    MAAS & AGENT --> OFFICE & CODE & SEARCH & AD & CAR & ROBOT & DEVICE
+    GPU & HBM2 & PKG --> SERVER2["AI 服务器<br/>工业富联 · 浪潮信息"]
+    SERVER2 & OPTIC & NET & COOL & PWR --> DC2["AI 数据中心<br/>AWS · Azure · 阿里云"]
+    DC2 --> ARCH & TRAIN & MULTI
+    ARCH & TRAIN --> INFER & AGENT & DATA
+    INFER & AGENT --> OFFICE & CODE & CAR & ROBOT & MED & DEVICE
 
     style UP fill:#e8f5e9,stroke:#2e7d32
     style MID fill:#fff3e0,stroke:#e65100
     style DOWN fill:#e3f2fd,stroke:#1565c0
     style GPU fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style HBM fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
-    style MODEL_O fill:#ffe0b2,stroke:#e65100,stroke-width:2px
-    style MODEL_C fill:#ffe0b2,stroke:#e65100,stroke-width:2px
-    style AGENT fill:#bbdefb,stroke:#1565c0,stroke-width:2px
+    style HBM2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px
+    style ARCH fill:#ffe0b2,stroke:#e65100,stroke-width:2px
+    style INFER fill:#ffe0b2,stroke:#e65100,stroke-width:2px
+    style AGENT fill:#ffe0b2,stroke:#e65100,stroke-width:2px
+    style CAR fill:#bbdefb,stroke:#1565c0,stroke-width:2px
+    style ROBOT fill:#bbdefb,stroke:#1565c0,stroke-width:2px
 </div>
 
-<!-- ==================== 四、关键趋势 ==================== -->
-<h2>四、2025-2026 关键趋势</h2>
-
-<h3>趋势 1：推理成本"摩尔定律" — AI 正在变便宜</h3>
-<p>GPT-4 级别能力的 API 调用成本，从 2023 年的 $30/M tokens 降到 2025 年的 $1-2/M tokens，下降了 <strong>15-30 倍</strong>。DeepSeek 的 MoE 架构和开源策略进一步压低了行业价格。推理成本的下降是 AI 大规模商业化的前提。</p>
-
-<h3>趋势 2：Agent 成为 2025-2026 核心主线</h3>
-<p>大模型从"问答"进化为"行动"。Agent 能自主规划任务、调用工具、操作软件、浏览网页，是 AI 从"工具"变成"同事"的关键一步。OpenAI Operator、Anthropic Claude Agent、字节 Coze 都在全力押注。</p>
-
-<h3>趋势 3：开源追赶闭源，差距在缩小</h3>
-<p>Llama 4、DeepSeek-R1、Qwen2.5 等开源模型的能力已接近 GPT-4 级别。开源降低了 AI 的准入门槛，让更多企业和开发者能够使用和定制大模型。</p>
-
-<h3>趋势 4：端侧 AI 爆发</h3>
-<p>高通骁龙 8 Gen4、联发科天玑 9400、苹果 M4 的 NPU 算力已达 40-75 TOPS，足以在手机/PC 上运行 7B-13B 参数模型。端侧 AI 不依赖网络、保护隐私、响应更快，是下一个增长极。</p>
-
-<h3>趋势 5：算力军备竞赛加剧</h3>
-<p>全球科技巨头 2025 年 AI 资本开支预计超 <strong>3,000 亿美元</strong>（微软、Google、Meta、Amazon 各 500-800 亿美元）。xAI 的 Colossus 2 集群扩展至 20 万张 GPU。算力仍然供不应求。</p>
-
-<h3>趋势 6：中国 AI 走出差异化路线</h3>
-<p>受芯片禁令影响，中国 AI 在算力端受制，但在模型端（DeepSeek-R1）、应用端（豆包月活过亿）、端侧端（华为昇腾生态）走出了独特路径。MoE 架构 + 强化学习推理 + 极致性价比是中国 AI 的核心竞争力。</p>
-
 <div class="note">
-  <strong>说明：</strong>本文数据综合自行业公开信息及券商研报，市场规模为估算值，模型能力评级基于公开基准测试和行业共识，仅供研究参考。具体数据建议参考 IDC、Gartner、信通院、LMSYS Chatbot Arena 等专业来源。
+  <strong>说明：</strong>本文数据综合自行业公开信息及券商研报，技术参数基于各公司公开发布数据，市场份额为约数，仅供研究参考。<br>
+  <strong>标注说明：</strong><span class="cn">红色加粗</span> 为国产企业/产品。评级基于公开基准测试和行业共识。
 </div>
 
 </div><!-- .container -->
@@ -553,10 +817,7 @@ graph TB
   mermaid.initialize({
     startOnLoad: true,
     theme: 'base',
-    themeVariables: {
-      fontSize: '13px',
-      fontFamily: '-apple-system, PingFang SC, Microsoft YaHei, sans-serif'
-    },
+    themeVariables: { fontSize: '12px', fontFamily: '-apple-system, PingFang SC, Microsoft YaHei, sans-serif' },
     flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
   });
 </script>
